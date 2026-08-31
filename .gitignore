@@ -1,0 +1,26 @@
+# Virtual environments
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Raw data (downloaded by script, not versioned)
+data/raw/*
+!data/raw/.gitkeep
+
+# Local settings and secrets
+.env
+.vscode/
+.idea/
+
+# OS and Office temporary files
+.DS_Store
+Thumbs.db
+~$*
