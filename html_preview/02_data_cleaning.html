@@ -7875,6 +7875,10 @@ koji smo na predavanjima zvali <strong>listwise brisanje</strong>.</p>
 nedostaju zbog neke druge promenljive (MAR) ili zbog same vrednosti koja nedostaje (MNAR), brisanjem
 uvodimo pristrasnost u uzorak.</p>
 <p>Pre nego što se time pozabavimo, treba da suzimo skup na ljude o kojima uopšte govorimo.</p>
+<p>Da to nije formalnost, videlo se već u opisu skupa: anketu ne popunjavaju samo programeri po
+zanimanju, nego i oni koji tek uče da programiraju, hobisti, bivši programeri i ljudi koji rade sa
+programerima. Kod tih kategorija pitanje o plati ne mora da meri istu veličinu kao kod zaposlenog
+programera. Koliko je kojih i kako im izgleda prijavljena zarada, merimo odmah ispod.</p>
 <blockquote>
 <p><strong>Hipoteza:</strong> ispitanici koji nisu programeri po zanimanju, kao i oni koji trenutno ne rade, ne
 pripadaju istoj populaciji — iznos koji prijavljuju ne meri istu veličinu kao plata zaposlenog
@@ -9001,7 +9005,8 @@ morali da znamo plate onih koji ih nisu prijavili. Da ih znamo, ne bismo ni imal
 <p>Ono što možemo da proverimo jeste da li nedostajanje zavisi od obeležja koja o ispitaniku <strong>ipak
 imamo</strong> — zemlje, godina iskustva, obrazovanja, veličine firme. Ta provera razdvaja MCAR od ostalog:</p>
 <ul>
-<li>ako nedostajanje ne zavisi ni od čega što posmatramo, to je u skladu sa MCAR i brisanje je bezbedno;</li>
+<li>ako nedostajanje ne zavisi ni od čega što posmatramo, MCAR ne možemo da odbacimo — ali ni da ga
+potvrdimo, jer MNAR ostaje neproverljiv bez samih nedostajućih plata;</li>
 <li>ako zavisi, nedostajanje sigurno <strong>nije</strong> MCAR, pa brisanje menja sastav uzorka.</li>
 </ul>
 <blockquote>
@@ -9283,9 +9288,8 @@ sa 19,6, a prag od 10 poena prelaze i <code>LanguageChoice</code> (15,2), <code>
 srećno izabranom. Formalno je dovoljno i jedno — tvrdnja glasi da nedostajanje zavisi od nečega što
 posmatramo, pa jedan slučaj obara MCAR — ali ovako znamo i <strong>koja</strong> obeležja su u igri, što nam treba
 za odluku o modelu.</p>
-<p>Dalje razrađujemo <strong>zemlju</strong>, iz dva razloga. Ima najveći razmak, i jedina je od ovih koja je
-istovremeno jak prediktor same plate — pa ako baš od nje zavisi ko odgovara, posledice po uzorak su
-najozbiljnije. Veličinu firme zadržavamo na umu za kasnije.</p>
+<p>Dalje razrađujemo <strong>zemlju</strong>, jer ima ubedljivo najveći razmak, pa je prvi kandidat za detaljnu
+proveru. Veličinu firme zadržavamo na umu za kasnije.</p>
 <p>Ono što ova tabela ne pokazuje jeste da li su razmaci statistički značajni i koliko su zapravo veliki.
 Razmak najniže i najviše kategorije je osetljiv na krajnosti, pa ga treba proveriti pravim testom.</p>
 </div>
@@ -9804,7 +9808,8 @@ zapisana, bilo zato što je logički nemoguća. Razlikuje se od druga dva proble
 </table>
 <p>Zato strukturne greške idu <strong>pre</strong> netipičnih vrednosti. Ako ih ostavimo, one ulaze u račun kvartila i
 pomeraju granicu po kojoj kasnije sudimo šta je ekstremno.</p>
-<p>Kolona ima 169 i ne možemo ih sve pregledati ručno. Ali svaka provera koju možemo da smislimo spada u
+<p>Kolona ima 172 — 170 iz ankete i dve koje smo dodali u sekciji 1 — i ne možemo ih sve pregledati
+ručno. Ali svaka provera koju možemo da smislimo spada u
 jednu od dve grupe, i to nam rešava problem izbora:</p>
 <ul>
 <li><strong>provere koje ne traže da znamo šta kolona znači</strong> — kontrolni karakteri, prazan string umesto
@@ -9913,8 +9918,9 @@ izgleda kao <code>'AUD\tAustralian dollar'</code> umesto <code>'AUD Australian d
 valuta. <code>AIExplain</code> i <code>AIOpen</code> imaju prelome reda i višak razmaka.</p>
 <p><strong>Tumačenje:</strong> kod <code>Currency</code> je to nedoslednost u zapisu koju moramo da ispravimo, jer bismo inače
 istu valutu mogli tretirati kao dve različite kategorije. <code>AIExplain</code> i <code>AIOpen</code> su kolone sa
-slobodnim tekstom, gde su prelomi očekivani jer ljudi kucaju rečenice — njih normalizujemo iz istog
-razloga, mada te kolone verovatno nećemo ni koristiti.</p>
+slobodnim tekstom, gde su prelomi očekivani jer ljudi kucaju rečenice. Njih normalizujemo iz istog
+razloga kao i <code>Currency</code> — da provera bude potpuna i postupak dosledan — a da li kolone sa slobodnim
+tekstom uopšte ulaze u model, odlučuje se tek u odeljku 6.3.</p>
 <p>Ispravka je jednostavna: svaki niz belina svodimo na jedan razmak, a ono što posle toga ostane prazno
 postaje <code>NA</code>.</p>
 </div>
@@ -10474,7 +10480,8 @@ redova posle:         34,106
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Zapažanje:</strong> maksimumi su sada 60 i 65 godina, a broj redova je nepromenjen — <strong>34.106 pre i
-posle</strong>. Udeo nedostajućih vrednosti je porastao za oko procenat kod obe kolone.</p>
+posle</strong>. Udeo nedostajućih vrednosti porastao je kod <code>WorkExp</code> sa <strong>3,8% na 4,7%</strong>, a kod <code>YearsCode</code> sa
+<strong>9,1% na 9,3%</strong> — dakle za 0,9 odnosno 0,2 procentna poena.</p>
 <p><strong>Tumačenje:</strong> nemoguće vrednosti <strong>ne brišu ceo red</strong>, nego samo tu jednu ćeliju. Ispitanik sa
 pogrešno unetim stažom i dalje ima ispravnu platu, zemlju i sve ostalo; jedino njegov staž ne znamo.
 Brisanjem celog reda bacili bismo ispravne podatke zbog jednog polja.</p>
@@ -12761,8 +12768,10 @@ JobSat                3.4
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> kod staža nedostaje ispod procenta, kod zadovoljstva poslom oko tri, a kod broja alata
-znatno više — petnaest i dvadeset pet posto.</p>
+<p><strong>Zapažanje:</strong> kod <code>WorkExp</code> nedostaje <strong>1,5%</strong>, kod <code>YearsCode</code> <strong>0,4%</strong>, kod zadovoljstva poslom
+<strong>3,4%</strong>, a kod broja alata znatno više — <strong>15,1%</strong> i <strong>24,9%</strong>. Brojevi su manji nego u sekciji 4
+jer se mere na trening skupu, koji je uži od populacije: u međuvremenu su izostavljeni redovi bez
+prijavljene plate i netipične vrednosti.</p>
 <p><strong>Tumačenje:</strong> najjednostavnije rešenje je da svima upišemo istu vrednost, <strong>medijanu te kolone
 izračunatu nad svim ispitanicima</strong>. Nazivaćemo je opštom medijanom.</p>
 <p>Ali možemo i bolje. Ispitanike umemo da razvrstamo u grupe po nekom obeležju koje već imamo — recimo
@@ -12876,12 +12885,12 @@ popunjavamo ToolCountPersonal  (n=10,972)
 <p>Kod ostale tri kolone razlika je zanemarljiva: <code>JobSat</code> ide sa 1,447 na 1,427, <code>ToolCountWork</code> sa 4,417
 na 4,376, <code>ToolCountPersonal</code> sa 3,250 na 3,235. Formalno je i tu grupisanje „najbolje", ali dobitak je
 u trećoj decimali.</p>
-<p>Zanimljivo je i da kod staža grupisanje <strong>po zemlji</strong> ne pomaže skoro ništa (7,016 naspram 7,276), iako
-je zemlja inače najjači prediktor plate.</p>
+<p>Zanimljivo je i da kod staža grupisanje <strong>po zemlji</strong> ne pomaže skoro ništa (7,016 naspram 7,276),
+iako smo u sekciji 5 videli koliko se nivo plate razlikuje među zemljama.</p>
 <p><strong>Tumačenje:</strong> rezultat je lako objasniti. Staž je vezan za uzrast — ko ima trideset godina ne može
 imati trideset godina staža — pa poznavanje starosne kategorije stvarno sužava opseg mogućih vrednosti.
-Zemlja o stažu ne govori ništa, i merenje to potvrđuje, iako bi se po njenom značaju u ostatku rada
-moglo pomisliti drugačije.</p>
+Zemlja o stažu ne govori ništa, i merenje to potvrđuje — razlika među zemljama koju smo videli kod
+plata na staž se ne prenosi.</p>
 <p>Kod broja alata i zadovoljstva poslom nijedno grupisanje ne donosi stvarnu razliku, pa uzimamo jednu
 medijanu za sve — nema razloga za složeniji postupak koji ne daje bolji rezultat.</p>
 <p><strong>Odluka:</strong> <code>WorkExp</code> i <code>YearsCode</code> popunjavamo medijanom unutar starosne kategorije, ostale jednom

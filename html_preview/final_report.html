@@ -7796,7 +7796,7 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=73ab3fd6">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eeabda45">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10292,19 +10292,21 @@ zaista <code>CompTotal</code> preveden u dolare je za sada pretpostavka, i prove
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="9.-Koju-kolonu-biramo-za-ciljnu-promenljivu">9. Koju kolonu biramo za ciljnu promenljivu<a class="anchor-link" href="#9.-Koju-kolonu-biramo-za-ciljnu-promenljivu">¶</a></h2><p>Uzorak je globalan — u celom skupu ima 177 zemalja i 142 valute.
+<h2 id="9.-Koja-kolona-mo%C5%BEe-biti-ciljna-promenljiva">9. Koja kolona može biti ciljna promenljiva<a class="anchor-link" href="#9.-Koja-kolona-mo%C5%BEe-biti-ciljna-promenljiva">¶</a></h2><p>Uzorak je globalan — u celom skupu ima 177 zemalja i 142 valute.
 Zbog toga <code>CompTotal</code> <strong>nije uporediv između zemalja</strong>: iznos od 3.000.000 znači nešto sasvim
 drugo u dinarima nego u evrima. Regresija nad takvom kolonom ne bi modelovala platu nego uglavnom
 izbor valute.</p>
-<p>Zato je ciljna promenljiva <strong><code>ConvertedCompYearly</code></strong>.</p>
+<p>Time otpada <code>CompTotal</code>, pa ostaje <strong><code>ConvertedCompYearly</code></strong> kao jedini kandidat. Uzimamo ga kao
+<strong>radnu odluku</strong> — radnu zato što o toj koloni za sada znamo samo da nije anketno pitanje. Da li je
+uopšte pouzdana, proverava se u sekciji 11, i tek posle te provere se odluka potvrđuje.</p>
 <p>Alternativa bi bila da konverziju uradimo sami, iz <code>CompTotal</code>-a i kolone <code>Currency</code>. To ne radimo:
 tražilo bi istorijske kurseve za sve valute na datum ankete, dakle spoljni izvor podataka, i dalo bi
 istu veličinu koju Stack Overflow već nudi, samo sa dodatnom greškom koju bismo sami uveli.</p>
 <p>Ono što ima smisla nije da konverziju ponovimo, nego da je <strong>proverimo</strong>.</p>
-<p>Odluku donosimo pre eksplorativne analize, što na prvi pogled deluje prerano. Ovde je ipak u redu:
-<code>CompTotal</code> i <code>ConvertedCompYearly</code> nisu dva različita kandidata između kojih biramo po tome kako se
-ponašaju, nego <strong>ista veličina u različitim jedinicama</strong>. Da iznosi u različitim valutama nisu
-međusobno uporedivi, znamo i bez ijednog grafika.</p>
+<p>Da se ovaj korak radi bez ijednog grafika, ima razloga. <code>CompTotal</code> i <code>ConvertedCompYearly</code> nisu dva
+različita kandidata između kojih biramo po tome kako se ponašaju, nego <strong>ista veličina u različitim
+jedinicama</strong>. To što iznosi u različitim valutama nisu međusobno uporedivi ne utvrđuje se merenjem
+nego sledi iz toga šta je u koloni zapisano.</p>
 </div>
 </div>
 </div>
@@ -10585,7 +10587,7 @@ takve vrednosti ne popravlja — čini ih uočljivijim.</p>
 <p>Zaključak sekcije: ciljnu promenljivu modelujemo u logaritamskom obliku, ali ekstremne vrednosti na
 oba kraja ostaju otvoreno pitanje i rešavaju se u fazi čišćenja podataka.</p>
 <p>Da li je transformacijom zadovoljena i pretpostavka o ujednačenom rasipanju grešaka
-(homoscedastičnost) ovde ne možemo utvrditi, jer je to svojstvo grešaka modela a ne same kolone. Sa
+(homoskedastičnost) ovde ne možemo utvrditi, jer je to svojstvo grešaka modela a ne same kolone. Sa
 predavanja znamo da se ona proverava Scale-Location dijagnostičkim grafikom nad rezidualima, pa to
 ostavljamo za fazu modelovanja.</p>
 </div>
@@ -10909,10 +10911,14 @@ prethodnoj sekciji videli šta se dešava kad se to ne uradi kod raspodele sa du
 završava na oko 91% — dalje od toga nema nijednog ispitanika.</p>
 <p><strong>Tumačenje:</strong> iz toga dokle se osa proteže sledi jedan zaključak koji vredi izvući. U ranijim
 godinama ankete postojala je kolona <code>CompFreq</code>, koja je beležila periodiku prijavljenog iznosa, pa je
-Stack Overflow deo odgovora sam svodio na godišnji nivo. Da je isto radio i ovde, redovi svedeni sa
-mesečnog iznosa nosili bi kurs dvanaest puta veći od uobičajenog za svoju valutu — količnik prema
-medijani bio bi 12, pa odstupanje <code>|12 − 1| = 11</code>, odnosno <strong>1.100%</strong>. Grafik se završava na oko 91%,
-dakle tako velikih odstupanja nema.</p>
+Stack Overflow deo odgovora sam svodio na godišnji nivo.</p>
+<p>Da je isto radio i ovde, videlo bi se, i vredi proći kroz jedan primer. Neka je ispitanik u
+<code>CompTotal</code> upisao <strong>5.000 evra</strong>, a to je zapravo mesečni iznos. Ako bi Stack Overflow taj iznos
+sveo na godišnji pre konverzije, u <code>ConvertedCompYearly</code> bi otišlo <code>5.000 × 12 × kurs</code>, dok bi u
+<code>CompTotal</code> ostalo 5.000. Količnik te dve kolone, koji mi računamo kao implicitni kurs, bio bi onda
+<strong>dvanaest puta veći</strong> od kursa za evro. Prema medijani za tu valutu to je količnik 12, pa odstupanje
+<code>|12 − 1| = 11</code>, odnosno <strong>1.100%</strong>.</p>
+<p>Grafik se završava na oko 91%, dakle tako velikih odstupanja nema.</p>
 <p>Sa slike se, međutim, vidi samo dokle osa seže, a ne i da baš u okolini vrednosti 12 nema nikoga.
 Zato to proveravamo računom.</p>
 </div>
@@ -10972,11 +10978,15 @@ najveće odstupanje u celom skupu:              91.2%
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Nalaz:</strong> u okolini faktora dvanaest nema nijednog reda, a najveći zabeleženi količnik prema medijani
 je 1,91. <strong>Stack Overflow, dakle, nije primenio nikakvu transformaciju osim konverzije valute.</strong></p>
-<p>Vredi naglasiti šta ovo <em>ne</em> znači. Provera ne može da otkrije ispitanika koji je sam pogrešio i
-uneo mesečnu platu. Pošto se <code>ConvertedCompYearly</code> računa iz <code>CompTotal</code>-a, takva greška ulazi u obe
-kolone, one se u količniku skrate, i red izgleda potpuno uredno. Ovde tražimo transformaciju koju je
-uveo Stack Overflow, ne grešku ispitanika — ta druga je zaseban problem i rešava se u fazi čišćenja
-outliera.</p>
+<p>Vredi naglasiti šta ovo <em>ne</em> znači. Provera ne može da otkrije ispitanika koji je <strong>sam</strong> pogrešio i
+uneo mesečnu platu umesto godišnje.</p>
+<p>Razlika je u tome ko greši. U primeru iznad iznos je menjao Stack Overflow, pa je promena ulazila
+samo u <strong>jednu</strong> od dve kolone i količnik se pomerao. Kad grešku napravi ispitanik, on u <code>CompTotal</code>
+upiše 5.000 umesto 60.000, a <code>ConvertedCompYearly</code> se <strong>iz tog istog broja</strong> izračuna kao
+<code>5.000 × kurs</code>. Količnik je onda <code>5.000 × kurs / 5.000</code>, dakle običan kurs za tu valutu — isti kao
+kod svih ispravnih redova. Greška se u količniku skrati i red izgleda potpuno uredno.</p>
+<p>Ovde, dakle, tražimo transformaciju koju je uveo Stack Overflow, ne grešku ispitanika — ta druga je
+zaseban problem i rešava se u fazi čišćenja outliera.</p>
 <h3 id="Grafik-9-%E2%80%94-uve%C4%87an-prikaz-malih-odstupanja">Grafik 9 — uvećan prikaz malih odstupanja<a class="anchor-link" href="#Grafik-9-%E2%80%94-uve%C4%87an-prikaz-malih-odstupanja">¶</a></h3><p><strong>Motivacija:</strong> ostaje da vidimo kako izgledaju ona odstupanja koja jesu tu, u pojasu od nekoliko
 procenata oko nule. Na prethodnom grafiku se taj pojas svodio na jedan stubić, pa sve preko 3%
 sabijamo u poslednji stubić da bismo ga videli izbliza.</p>
@@ -11305,6 +11315,10 @@ koji smo na predavanjima zvali <strong>listwise brisanje</strong>.</p>
 nedostaju zbog neke druge promenljive (MAR) ili zbog same vrednosti koja nedostaje (MNAR), brisanjem
 uvodimo pristrasnost u uzorak.</p>
 <p>Pre nego što se time pozabavimo, treba da suzimo skup na ljude o kojima uopšte govorimo.</p>
+<p>Da to nije formalnost, videlo se već u opisu skupa: anketu ne popunjavaju samo programeri po
+zanimanju, nego i oni koji tek uče da programiraju, hobisti, bivši programeri i ljudi koji rade sa
+programerima. Kod tih kategorija pitanje o plati ne mora da meri istu veličinu kao kod zaposlenog
+programera. Koliko je kojih i kako im izgleda prijavljena zarada, merimo odmah ispod.</p>
 <blockquote>
 <p><strong>Hipoteza:</strong> ispitanici koji nisu programeri po zanimanju, kao i oni koji trenutno ne rade, ne
 pripadaju istoj populaciji — iznos koji prijavljuju ne meri istu veličinu kao plata zaposlenog
@@ -12431,7 +12445,8 @@ morali da znamo plate onih koji ih nisu prijavili. Da ih znamo, ne bismo ni imal
 <p>Ono što možemo da proverimo jeste da li nedostajanje zavisi od obeležja koja o ispitaniku <strong>ipak
 imamo</strong> — zemlje, godina iskustva, obrazovanja, veličine firme. Ta provera razdvaja MCAR od ostalog:</p>
 <ul>
-<li>ako nedostajanje ne zavisi ni od čega što posmatramo, to je u skladu sa MCAR i brisanje je bezbedno;</li>
+<li>ako nedostajanje ne zavisi ni od čega što posmatramo, MCAR ne možemo da odbacimo — ali ni da ga
+potvrdimo, jer MNAR ostaje neproverljiv bez samih nedostajućih plata;</li>
 <li>ako zavisi, nedostajanje sigurno <strong>nije</strong> MCAR, pa brisanje menja sastav uzorka.</li>
 </ul>
 <blockquote>
@@ -12713,9 +12728,8 @@ sa 19,6, a prag od 10 poena prelaze i <code>LanguageChoice</code> (15,2), <code>
 srećno izabranom. Formalno je dovoljno i jedno — tvrdnja glasi da nedostajanje zavisi od nečega što
 posmatramo, pa jedan slučaj obara MCAR — ali ovako znamo i <strong>koja</strong> obeležja su u igri, što nam treba
 za odluku o modelu.</p>
-<p>Dalje razrađujemo <strong>zemlju</strong>, iz dva razloga. Ima najveći razmak, i jedina je od ovih koja je
-istovremeno jak prediktor same plate — pa ako baš od nje zavisi ko odgovara, posledice po uzorak su
-najozbiljnije. Veličinu firme zadržavamo na umu za kasnije.</p>
+<p>Dalje razrađujemo <strong>zemlju</strong>, jer ima ubedljivo najveći razmak, pa je prvi kandidat za detaljnu
+proveru. Veličinu firme zadržavamo na umu za kasnije.</p>
 <p>Ono što ova tabela ne pokazuje jeste da li su razmaci statistički značajni i koliko su zapravo veliki.
 Razmak najniže i najviše kategorije je osetljiv na krajnosti, pa ga treba proveriti pravim testom.</p>
 </div>
@@ -13234,7 +13248,8 @@ zapisana, bilo zato što je logički nemoguća. Razlikuje se od druga dva proble
 </table>
 <p>Zato strukturne greške idu <strong>pre</strong> netipičnih vrednosti. Ako ih ostavimo, one ulaze u račun kvartila i
 pomeraju granicu po kojoj kasnije sudimo šta je ekstremno.</p>
-<p>Kolona ima 169 i ne možemo ih sve pregledati ručno. Ali svaka provera koju možemo da smislimo spada u
+<p>Kolona ima 172 — 170 iz ankete i dve koje smo dodali u sekciji 14 — i ne možemo ih sve pregledati
+ručno. Ali svaka provera koju možemo da smislimo spada u
 jednu od dve grupe, i to nam rešava problem izbora:</p>
 <ul>
 <li><strong>provere koje ne traže da znamo šta kolona znači</strong> — kontrolni karakteri, prazan string umesto
@@ -13343,8 +13358,9 @@ izgleda kao <code>'AUD\tAustralian dollar'</code> umesto <code>'AUD Australian d
 valuta. <code>AIExplain</code> i <code>AIOpen</code> imaju prelome reda i višak razmaka.</p>
 <p><strong>Tumačenje:</strong> kod <code>Currency</code> je to nedoslednost u zapisu koju moramo da ispravimo, jer bismo inače
 istu valutu mogli tretirati kao dve različite kategorije. <code>AIExplain</code> i <code>AIOpen</code> su kolone sa
-slobodnim tekstom, gde su prelomi očekivani jer ljudi kucaju rečenice — njih normalizujemo iz istog
-razloga, mada te kolone verovatno nećemo ni koristiti.</p>
+slobodnim tekstom, gde su prelomi očekivani jer ljudi kucaju rečenice. Njih normalizujemo iz istog
+razloga kao i <code>Currency</code> — da provera bude potpuna i postupak dosledan — a da li kolone sa slobodnim
+tekstom uopšte ulaze u model, odlučuje se tek u odeljku 19.3.</p>
 <p>Ispravka je jednostavna: svaki niz belina svodimo na jedan razmak, a ono što posle toga ostane prazno
 postaje <code>NA</code>.</p>
 </div>
@@ -13904,7 +13920,8 @@ redova posle:         34,106
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Zapažanje:</strong> maksimumi su sada 60 i 65 godina, a broj redova je nepromenjen — <strong>34.106 pre i
-posle</strong>. Udeo nedostajućih vrednosti je porastao za oko procenat kod obe kolone.</p>
+posle</strong>. Udeo nedostajućih vrednosti porastao je kod <code>WorkExp</code> sa <strong>3,8% na 4,7%</strong>, a kod <code>YearsCode</code> sa
+<strong>9,1% na 9,3%</strong> — dakle za 0,9 odnosno 0,2 procentna poena.</p>
 <p><strong>Tumačenje:</strong> nemoguće vrednosti <strong>ne brišu ceo red</strong>, nego samo tu jednu ćeliju. Ispitanik sa
 pogrešno unetim stažom i dalje ima ispravnu platu, zemlju i sve ostalo; jedino njegov staž ne znamo.
 Brisanjem celog reda bacili bismo ispravne podatke zbog jednog polja.</p>
@@ -16190,8 +16207,10 @@ JobSat                3.4
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> kod staža nedostaje ispod procenta, kod zadovoljstva poslom oko tri, a kod broja alata
-znatno više — petnaest i dvadeset pet posto.</p>
+<p><strong>Zapažanje:</strong> kod <code>WorkExp</code> nedostaje <strong>1,5%</strong>, kod <code>YearsCode</code> <strong>0,4%</strong>, kod zadovoljstva poslom
+<strong>3,4%</strong>, a kod broja alata znatno više — <strong>15,1%</strong> i <strong>24,9%</strong>. Brojevi su manji nego u sekciji 17
+jer se mere na trening skupu, koji je uži od populacije: u međuvremenu su izostavljeni redovi bez
+prijavljene plate i netipične vrednosti.</p>
 <p><strong>Tumačenje:</strong> najjednostavnije rešenje je da svima upišemo istu vrednost, <strong>medijanu te kolone
 izračunatu nad svim ispitanicima</strong>. Nazivaćemo je opštom medijanom.</p>
 <p>Ali možemo i bolje. Ispitanike umemo da razvrstamo u grupe po nekom obeležju koje već imamo — recimo
@@ -16305,12 +16324,12 @@ popunjavamo ToolCountPersonal  (n=10,972)
 <p>Kod ostale tri kolone razlika je zanemarljiva: <code>JobSat</code> ide sa 1,447 na 1,427, <code>ToolCountWork</code> sa 4,417
 na 4,376, <code>ToolCountPersonal</code> sa 3,250 na 3,235. Formalno je i tu grupisanje „najbolje", ali dobitak je
 u trećoj decimali.</p>
-<p>Zanimljivo je i da kod staža grupisanje <strong>po zemlji</strong> ne pomaže skoro ništa (7,016 naspram 7,276), iako
-je zemlja inače najjači prediktor plate.</p>
+<p>Zanimljivo je i da kod staža grupisanje <strong>po zemlji</strong> ne pomaže skoro ništa (7,016 naspram 7,276),
+iako smo u sekciji 18 videli koliko se nivo plate razlikuje među zemljama.</p>
 <p><strong>Tumačenje:</strong> rezultat je lako objasniti. Staž je vezan za uzrast — ko ima trideset godina ne može
 imati trideset godina staža — pa poznavanje starosne kategorije stvarno sužava opseg mogućih vrednosti.
-Zemlja o stažu ne govori ništa, i merenje to potvrđuje, iako bi se po njenom značaju u ostatku rada
-moglo pomisliti drugačije.</p>
+Zemlja o stažu ne govori ništa, i merenje to potvrđuje — razlika među zemljama koju smo videli kod
+plata na staž se ne prenosi.</p>
 <p>Kod broja alata i zadovoljstva poslom nijedno grupisanje ne donosi stvarnu razliku, pa uzimamo jednu
 medijanu za sve — nema razloga za složeniji postupak koji ne daje bolji rezultat.</p>
 <p><strong>Odluka:</strong> <code>WorkExp</code> i <code>YearsCode</code> popunjavamo medijanom unutar starosne kategorije, ostale jednom
@@ -25885,10 +25904,10 @@ regularizacija iz tih kolona može izvući više, pitanje je sekcija 37 i 5.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="36.2-Dugovanje-iz-dela-o-ciljnoj-promenljivoj:-da-li-je-logaritam-bio-pravi-izbor">36.2 Dugovanje iz dela o ciljnoj promenljivoj: da li je logaritam bio pravi izbor<a class="anchor-link" href="#36.2-Dugovanje-iz-dela-o-ciljnoj-promenljivoj:-da-li-je-logaritam-bio-pravi-izbor">¶</a></h3><p>Pretpostavka koja se proverava zove se <strong>homoscedastičnost</strong>: da je rasipanje ostatka <strong>isto</strong> duž celog
+<h3 id="36.2-Dugovanje-iz-dela-o-ciljnoj-promenljivoj:-da-li-je-logaritam-bio-pravi-izbor">36.2 Dugovanje iz dela o ciljnoj promenljivoj: da li je logaritam bio pravi izbor<a class="anchor-link" href="#36.2-Dugovanje-iz-dela-o-ciljnoj-promenljivoj:-da-li-je-logaritam-bio-pravi-izbor">¶</a></h3><p>Pretpostavka koja se proverava zove se <strong>homoskedastičnost</strong>: da je rasipanje ostatka <strong>isto</strong> duž celog
 raspona predviđenih vrednosti. Ostatak je razlika stvarne i predviđene vrednosti, pa to znači da model
 kod niskih plata sme da greši u proseku taman koliko i kod visokih. Kad rasipanje raste sa predviđenom
-vrednošću, oblak tačaka dobija oblik levka — to je heteroscedastičnost, i sa predavanja znamo da je prvi
+vrednošću, oblak tačaka dobija oblik levka — to je heteroskedastičnost, i sa predavanja znamo da je prvi
 lek za nju transformacija ciljne promenljive, <code>log Y</code> ili <code>√Y</code>. Posledica nije da su koeficijenti
 pogrešni: oni ostaju nepristrasni, ali njihove <strong>standardne greške</strong> prestaju da važe, a iz njih se
 računaju p-vrednosti i intervali poverenja.</p>
@@ -25900,7 +25919,7 @@ ih podelimo na deset jednakih delova — <strong>decila</strong> — i u svakom 
 Decil je, dakle, desetina poređanog niza: prvi decil su najnižih deset posto predviđanja, poslednji
 najviših deset posto, a granice među njima su 10, 20, ... 90. percentil. Ako je rasipanje ujednačeno, tih
 deset brojeva izlaze približno isti.</p>
-<h3 id="Grafik-29-%E2%80%94-rasipanje-ostatka,-u-dolarima-i-u-logaritmu">Grafik 29 — rasipanje ostatka, u dolarima i u logaritmu<a class="anchor-link" href="#Grafik-29-%E2%80%94-rasipanje-ostatka,-u-dolarima-i-u-logaritmu">¶</a></h3><p><strong>Motivacija:</strong> homoscedastičnost je tvrdnja o obliku, pa se najbolje vidi na slici. Ako je logaritam bio
+<h3 id="Grafik-29-%E2%80%94-rasipanje-ostatka,-u-dolarima-i-u-logaritmu">Grafik 29 — rasipanje ostatka, u dolarima i u logaritmu<a class="anchor-link" href="#Grafik-29-%E2%80%94-rasipanje-ostatka,-u-dolarima-i-u-logaritmu">¶</a></h3><p><strong>Motivacija:</strong> homoskedastičnost je tvrdnja o obliku, pa se najbolje vidi na slici. Ako je logaritam bio
 pravi izbor, levi panel treba da pokaže lepezu koja se širi, a desni pojas ujednačene širine.</p>
 </div>
 </div>
@@ -26022,7 +26041,7 @@ prijavljenim iznosima, koje smo svesno zadržali. U dolarima oni stoje zbijeni u
 razvlače ulevo.</p>
 <p><strong>Logaritam zato ostaje</strong>, i to iz dva razloga koja su oba upravo izmerena. Prvi: na osamdeset posto
 raspona rasipanje jeste ujednačeno, sa odnosom <strong>1,55</strong>, dok u dolarima nije ujednačeno nigde — tamo je
-odnos <strong>3,09</strong> i raste postepeno kroz sve decile. Drugi razlog sa homoscedastičnošću nema veze: model na
+odnos <strong>3,09</strong> i raste postepeno kroz sve decile. Drugi razlog sa homoskedastičnošću nema veze: model na
 sirovim dolarima predviđa <strong>negativnu platu kod 419 ispitanika</strong>, a to nije loša procena nego nemoguća
 vrednost. U logaritmu se ne može desiti, jer se u dolare vraća stepenovanjem, a <code>10^x</code> je uvek pozitivno.</p>
 <p>Pretpostavka je, dakle, <strong>narušena lokalno</strong> — kod dvadeset posto najnižih predviđanja, a ne kroz ceo
@@ -26062,7 +26081,7 @@ kojima smo ih učili. Ovo je podsetnik šta koji od njih pokazuje:</p>
 <tr>
 <td><strong>Scale-Location</strong></td>
 <td>ujednačenost rasipanja</td>
-<td>vodoravna linija → homoscedastičnost; levak → nije</td>
+<td>vodoravna linija → homoskedastičnost; levak → nije</td>
 </tr>
 <tr>
 <td><strong>Residuals vs Leverage</strong></td>
