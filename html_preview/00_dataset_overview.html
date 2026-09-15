@@ -7936,7 +7936,7 @@ prvih pet redova i prvih šest kolona, da se vidi kako vrednosti izgledaju:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> odgovori imaju <strong>49.123 reda i 170 kolona</strong>. <code>ResponseId</code> ima tačno <strong>49.123</strong> različite
+<p><strong>Zapažanje:</strong> Odgovori imaju <strong>49.123 reda i 170 kolona</strong>. <code>ResponseId</code> ima tačno <strong>49.123</strong> različite
 vrednosti i nema ni jednog potpuno dupliranog reda, pa je red jedan ispitanik. Šema ima <strong>139 redova i 6
 kolona</strong>: <code>qid</code>, <code>qname</code>, <code>question</code>, <code>type</code>, <code>sub</code>, <code>sq_id</code>.</p>
 <p>Od 170 kolona odgovora <strong>119 su tekstualne</strong>, <strong>50 brojčane</strong> i jedna celobrojna.</p>
@@ -7945,7 +7945,7 @@ kolona</strong>: <code>qid</code>, <code>qname</code>, <code>question</code>, <c
 odgovori a ne kao slobodan tekst — <code>Master's degree (M.A., M.S., M.Eng., MBA, etc.)</code>,
 <code>Independent contractor, freelancer, or self-employed</code>, <code>None of the above</code>. U drugom redu je
 <code>EmploymentAddl</code> <strong>prazan</strong>, pa se praznine vide već u prvih pet redova.</p>
-<p><strong>Tumačenje:</strong> dimenzije su za rad ovog obima dobre — pedeset hiljada redova je dovoljno da se skup deli
+<p><strong>Tumačenje:</strong> Dimenzije su za rad ovog obima dobre — pedeset hiljada redova je dovoljno da se skup deli
 na trening i test, a i da se podgrupe posmatraju odvojeno.</p>
 <p>Ono što odmah traži objašnjenje je <strong>broj tekstualnih kolona</strong>. Sto devetnaest od sto sedamdeset je dve
 trećine, a anketa ne izgleda kao da traži eseje — u prikazanom uglu su svi odgovori kratki i izgledaju
@@ -8023,13 +8023,13 @@ pet sa najviše različitih vrednosti, i po jedna stvarna vrednost iz svake:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> kolona sa najviše različitih vrednosti je <strong><code>AIOpen</code>, sa 20.123</strong>, i njena vrednost u
+<p><strong>Zapažanje:</strong> Kolona sa najviše različitih vrednosti je <strong><code>AIOpen</code>, sa 20.123</strong>, i njena vrednost u
 primeru je <code>Troubleshooting, profiling, debugging</code> — rečenica, bez ikakve pravilne strukture.</p>
 <p>Odmah iza nje su <strong><code>PlatformHaveWorkedWith</code> (18.782)</strong> i <strong><code>LanguageHaveWorkedWith</code> (15.467)</strong>, i njihove
 vrednosti izgledaju drugačije:
 <code>Amazon Web Services (AWS);Cloudflare;Firebase;Google...</code> i <code>Bash/Shell (all shells);Dart;SQL</code>. To nisu
 rečenice nego <strong>spiskovi, sa tačka-zarezom između stavki</strong>.</p>
-<p><strong>Tumačenje:</strong> dve vrste tekstualnih kolona, dakle, izgledaju sasvim različito. Jedna je slobodan tekst,
+<p><strong>Tumačenje:</strong> Dve vrste tekstualnih kolona, dakle, izgledaju sasvim različito. Jedna je slobodan tekst,
 druga je više izabranih odgovora spojenih u jedan string.</p>
 <p>Ako je to tako, onda tačka-zarez nije slučajan znak u tim vrednostima nego <strong>razdvajač</strong>, i mora se
 javljati sistematski — u istim kolonama, kod većine odgovora. To je nešto što se može proveriti, pa
@@ -8044,7 +8044,7 @@ prelazimo na proveru.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Grafik-1-%E2%80%94-%C5%A1ta-se-dobije-kad-se-vrednost-razdvoji-po-ta%C4%8Dka-zarezu">Grafik 1 — šta se dobije kad se vrednost razdvoji po tačka-zarezu<a class="anchor-link" href="#Grafik-1-%E2%80%94-%C5%A1ta-se-dobije-kad-se-vrednost-razdvoji-po-ta%C4%8Dka-zarezu">¶</a></h3><p><strong>Motivacija:</strong> ako je tačka-zarez razdvajač, onda ono što nas zanima nisu vrednosti u koloni nego
+<h3 id="Grafik-1-%E2%80%94-%C5%A1ta-se-dobije-kad-se-vrednost-razdvoji-po-ta%C4%8Dka-zarezu">Grafik 1 — šta se dobije kad se vrednost razdvoji po tačka-zarezu<a class="anchor-link" href="#Grafik-1-%E2%80%94-%C5%A1ta-se-dobije-kad-se-vrednost-razdvoji-po-ta%C4%8Dka-zarezu">¶</a></h3><p><strong>Motivacija:</strong> Ako je tačka-zarez razdvajač, onda ono što nas zanima nisu vrednosti u koloni nego
 <strong>stavke</strong> u njima. Zato prvo brojimo u koliko se tekstualnih kolona tačka-zarez javlja i kod kolikog
 dela odgovora, a onda najširu takvu kolonu razdvojimo i nacrtamo najčešće stavke — da vidimo šta se time
 dobija.</p>
@@ -8143,14 +8143,14 @@ dobija.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> provera potvrđuje da tačka-zarez nije slučajan. Od <strong>119</strong> tekstualnih kolona, u <strong>57</strong> se
+<p><strong>Zapažanje:</strong> Provera potvrđuje da tačka-zarez nije slučajan. Od <strong>119</strong> tekstualnih kolona, u <strong>57</strong> se
 javlja u bar jednom procentu odgovora, u <strong>47</strong> u više od polovine, a u <strong>41</strong> ga nema ni u jednom
 odgovoru.</p>
 <p>Razdvajanje daje čitljiv rezultat. Kolona <code>PlatformHaveWorkedWith</code> ima <strong>18.782</strong> različite vrednosti, ali
 posle razdvajanja svega <strong>42</strong> različite stavke, od kojih su najčešće <code>Docker</code> (<strong>17.396</strong> ispitanika),
 <code>npm</code> (<strong>13.892</strong>) i <code>Amazon Web Services (AWS)</code> (<strong>10.605</strong>). Odgovorilo je <strong>24.234</strong> ispitanika, a
 jedan je izabrao svih <strong>42</strong> stavke.</p>
-<p><strong>Tumačenje:</strong> ovim je odgovoreno pitanje iz prethodne sekcije. Kolone nisu tekstualne zato što anketa
+<p><strong>Tumačenje:</strong> Ovim je odgovoreno pitanje iz prethodne sekcije. Kolone nisu tekstualne zato što anketa
 traži eseje, nego zato što je kod pitanja sa više dozvoljenih odgovora <strong>ceo izbor jednog ispitanika
 sačuvan kao jedan string</strong>. Takvih kolona je 47, dakle skoro trećina svih.</p>
 <p>Za dalji rad to znači da se takva kolona ne može uzeti kao obična kategorijska. Ako bi svaka različita
@@ -9477,7 +9477,7 @@ pun pregled po kolonama sačuvan: column_overview.csv (170 redova x 6 kolone)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> od 170 kolona, <strong>168 je vezano za pitanje iz šeme</strong>, a dve nisu: <code>ResponseId</code> i
+<p><strong>Zapažanje:</strong> Od 170 kolona, <strong>168 je vezano za pitanje iz šeme</strong>, a dve nisu: <code>ResponseId</code> i
 <code>ConvertedCompYearly</code>.</p>
 <p>Tih 168 kolona dolazi iz <strong>137 pitanja</strong>, po tipovima:</p>
 <table>
@@ -9520,7 +9520,7 @@ pun pregled po kolonama sačuvan: column_overview.csv (170 redova x 6 kolone)
 <code>AIAgentChallenges</code>, <code>AIAgentImpact</code> i <code>AITool</code>, sa po pet kolona.</p>
 <p>Poslednji deo ispisa gleda dve kolone koje se po imenu tiču kompenzacije: <strong><code>CompTotal</code> ima tekst
 pitanja u šemi, a <code>ConvertedCompYearly</code> ga nema.</strong></p>
-<p><strong>Tumačenje:</strong> razlika 139 naspram 170 je time razjašnjena. Pitanje tipa <code>Matrix</code> je u anketi jedna
+<p><strong>Tumačenje:</strong> Razlika 139 naspram 170 je time razjašnjena. Pitanje tipa <code>Matrix</code> je u anketi jedna
 tabela, ali u podacima postaje nekoliko kolona; kod <code>Language</code> su to tri kolone. Zato je pitanja manje
 nego kolona, a razlika je gotovo cela u tih trinaest matričnih pitanja.</p>
 <p>Tipovi usput objašnjavaju i nalaz iz druge sekcije. <code>MC</code> je „Multiple Choice", pitanje sa jednim ili više
@@ -9537,6 +9537,112 @@ birali šta se predviđa.</p>
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d89acb61">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="%C5%A0ta-koja-kolona-zna%C4%8Di">Šta koja kolona znači<a class="anchor-link" href="#%C5%A0ta-koja-kolona-zna%C4%8Di">¶</a></h3><p>Imena kolona u anketi su na engleskom i kroz ceo rad ih navodimo onako kako stoje u podacima. Puna
+tabela svih 137 pitanja je iznad; ovde je kratak pregled onih koje se najčešće pominju u tekstu, da se
+ne mora vraćati na nju.</p>
+<table>
+<thead>
+<tr>
+<th>kolona</th>
+<th>šta pitanje traži</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MainBranch</code></td>
+<td>da li ispitanik piše kod i u kom svojstvu — programer po zanimanju, student, hobista</td>
+</tr>
+<tr>
+<td><code>Employment</code></td>
+<td>trenutni radni status (zaposlen, frilenser, nezaposlen, student)</td>
+</tr>
+<tr>
+<td><code>EmploymentAddl</code></td>
+<td>čime se još bavi pored glavnog posla</td>
+</tr>
+<tr>
+<td><code>Country</code></td>
+<td>zemlja u kojoj živi</td>
+</tr>
+<tr>
+<td><code>Currency</code></td>
+<td>valuta koju svakodnevno koristi</td>
+</tr>
+<tr>
+<td><code>CompTotal</code></td>
+<td>ukupna godišnja kompenzacija u toj valuti, kako ju je ispitanik uneo</td>
+</tr>
+<tr>
+<td><code>ConvertedCompYearly</code></td>
+<td>ista kompenzacija preračunata u dolare; nije anketno pitanje</td>
+</tr>
+<tr>
+<td><code>Age</code></td>
+<td>starosna kategorija</td>
+</tr>
+<tr>
+<td><code>EdLevel</code></td>
+<td>najviši završen nivo formalnog obrazovanja</td>
+</tr>
+<tr>
+<td><code>WorkExp</code></td>
+<td>godine profesionalnog radnog staža</td>
+</tr>
+<tr>
+<td><code>YearsCode</code></td>
+<td>godine programiranja ukupno, računajući i školovanje</td>
+</tr>
+<tr>
+<td><code>DevType</code></td>
+<td>vrsta posla koji obavlja</td>
+</tr>
+<tr>
+<td><code>OrgSize</code></td>
+<td>veličina firme, po broju zaposlenih</td>
+</tr>
+<tr>
+<td><code>Industry</code></td>
+<td>delatnost firme</td>
+</tr>
+<tr>
+<td><code>RemoteWork</code></td>
+<td>radi li od kuće, iz kancelarije ili kombinovano</td>
+</tr>
+<tr>
+<td><code>JobSat</code></td>
+<td>zadovoljstvo poslom, na skali</td>
+</tr>
+<tr>
+<td><code>SODuration</code></td>
+<td>koliko dugo koristi Stack Overflow</td>
+</tr>
+<tr>
+<td><code>ToolCountWork</code></td>
+<td>broj alata koje koristi na poslu</td>
+</tr>
+<tr>
+<td><code>ToolCountPersonal</code></td>
+<td>broj alata koje koristi na ličnim projektima</td>
+</tr>
+<tr>
+<td><code>ResponseId</code></td>
+<td>redni broj ispitanika; nije odgovor nego identifikator</td>
+</tr>
+</tbody>
+</table>
+<p>Kolone čije ime počinje sa <code>Language</code>, <code>Database</code>, <code>Platform</code>, <code>Webframe</code>, <code>AITool</code> i slično dolaze u
+trojkama — sa čim je ispitanik radio, sa čim želi da radi, i presek to dvoje. O njima detaljnije kad na
+njih dođemo.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=11e677e2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -9548,7 +9654,7 @@ odakle su ispitanici i čime se bave.</p>
 <p>Uz to nas zanima i koja su pitanja <strong>skoro svi</strong> odgovorili, jer se odatle vidi šta je u anketi
 obavezno a šta ne. Te kolone ne biramo unapred nego ih uzimamo po meri: one sa najmanje praznih
 vrednosti.</p>
-<h3 id="Grafik-2-%E2%80%94-sastav-uzorka">Grafik 2 — sastav uzorka<a class="anchor-link" href="#Grafik-2-%E2%80%94-sastav-uzorka">¶</a></h3><p><strong>Motivacija:</strong> ako je uzorak pretežno iz jedne zemlje ili iz jedne vrste posla, to oblikuje sve što se
+<h3 id="Grafik-2-%E2%80%94-sastav-uzorka">Grafik 2 — sastav uzorka<a class="anchor-link" href="#Grafik-2-%E2%80%94-sastav-uzorka">¶</a></h3><p><strong>Motivacija:</strong> Ako je uzorak pretežno iz jedne zemlje ili iz jedne vrste posla, to oblikuje sve što se
 kasnije o platama može reći. Crtamo dve slike: odakle su ispitanici i kako su odgovorili na pitanje koje
 je u anketi prvo i obavezno.</p>
 </div>
@@ -9664,9 +9770,10 @@ MainBranch:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> kolone sa najmanje praznina su <strong><code>ResponseId</code>, <code>MainBranch</code> i <code>Age</code> — sve tri bez ijedne
-praznine</strong> — pa <code>Employment</code> sa <strong>1,7%</strong> i <code>EdLevel</code> sa <strong>2,1%</strong>. Sve su to pitanja o samom ispitaniku, i
-sva su na početku ankete.</p>
+<p><strong>Zapažanje:</strong> Bez ijedne praznine su tri kolone — <code>ResponseId</code>, koji je samo redni broj ispitanika pa
+se i očekuje da je uvek popunjen, i dva prava pitanja: <code>MainBranch</code> (čime se ispitanik bavi) i <code>Age</code>
+(starosna kategorija). Slede <code>Employment</code>, trenutni radni status, sa <strong>1,7%</strong> praznina, i <code>EdLevel</code>,
+nivo obrazovanja, sa <strong>2,1%</strong>. Sve su to pitanja o samom ispitaniku i sva su na početku ankete.</p>
 <p>Na pitanje <code>MainBranch</code> je <strong>37.418 ispitanika, odnosno 76,2%</strong>, odgovorilo da su programeri po zanimanju.
 Ostatak je raspoređen na one kojima programiranje nije glavni posao (<strong>10,0%</strong>), one koji uče da programiraju
 (<strong>5,3%</strong>), hobiste (<strong>3,9%</strong>), bivše programere (<strong>2,7%</strong>) i one koji rade sa programerima (<strong>2,0%</strong>).</p>
@@ -9674,16 +9781,19 @@ Ostatak je raspoređen na one kojima programiranje nije glavni posao (<strong>10
 uzorka. Među onima koji su odgovorili, zemalja je <strong>177</strong>, a raspodela je vrlo neravnomerna: Sjedinjene
 Države nose <strong>7.226 ispitanika, odnosno 20,4%</strong>, Nemačka <strong>8,5%</strong>, Indija <strong>7,2%</strong>. Prvih deset zemalja
 nosi <strong>59,6%</strong>, a <strong>124 zemlje imaju manje od sto ispitanika</strong>.</p>
-<p><strong>Tumačenje:</strong> tri nalaza.</p>
+<p><strong>Tumačenje:</strong> Tri nalaza.</p>
 <p><strong>Uzorak je pretežno, ali ne isključivo, sastavljen od programera po zanimanju.</strong> Tri četvrtine su tako
 odgovorile, ali je preostala četvrtina raznorodna — u njoj su i oni koji uče, i hobisti, i bivši
 programeri. Pitanje o plati kod tih kategorija ne mora da meri istu veličinu, pa je pre modelovanja
 potrebno odlučiti čije plate uopšte modelujemo.</p>
 <p><strong>Uzorak nije ravnomeran po zemljama.</strong> Kad polovinu odgovorenih nosi desetak zemalja, a preko sto zemalja
 ima manje od sto ispitanika, tvrdnje o platama biće mnogo bolje potkrepljene za neke zemlje nego za druge.</p>
-<p><strong>Zemlja nedostaje kod svakog četvrtog ispitanika</strong>, što je za obeležje koje je uvod postavio kao
-deo pitanja neprijatno mnogo. To je i prvi konkretan primer nedostajanja koje nije zanemarljivo, pa sledeća
-sekcija gleda kako su praznine raspoređene u celom skupu.</p>
+<p><strong>Zemlja nedostaje kod 27,9% ispitanika.</strong> Posledica je konkretna: svaka tvrdnja o razlikama među
+zemljama — pa i ova o neravnomernosti uzorka — oslanja se na nepunih tri četvrtine odgovorenih. Ako se
+zemlja kasnije pokaže korisnom za predviđanje, moraćemo posebno da odlučimo šta radimo sa tom
+četvrtinom: da li je izostavljamo ili neodgovaranje kodiramo kao zasebnu vrednost. To je i prvi
+konkretan primer nedostajanja koje nije zanemarljivo, pa sledeća sekcija gleda kako su praznine
+raspoređene u celom skupu.</p>
 </div>
 </div>
 </div>
@@ -9701,7 +9811,7 @@ ispitanicima.</p>
 svuda po malo ili skoncentrisano u nekoliko kolona. Drugo, kako se taj udeo menja <strong>duž redosleda
 kolona</strong>, pošto kolone stoje u redosledu u kom anketa postavlja pitanja. Treće, koliko je pitanja
 odgovorio pojedinačan ispitanik.</p>
-<h3 id="Grafik-3-%E2%80%94-raspodela-praznina-po-kolonama-i-po-ispitanicima">Grafik 3 — raspodela praznina po kolonama i po ispitanicima<a class="anchor-link" href="#Grafik-3-%E2%80%94-raspodela-praznina-po-kolonama-i-po-ispitanicima">¶</a></h3><p><strong>Motivacija:</strong> jedan procenat o celoj tabeli ne govori ni da li su praznine skoncentrisane u pojedinim
+<h3 id="Grafik-3-%E2%80%94-raspodela-praznina-po-kolonama-i-po-ispitanicima">Grafik 3 — raspodela praznina po kolonama i po ispitanicima<a class="anchor-link" href="#Grafik-3-%E2%80%94-raspodela-praznina-po-kolonama-i-po-ispitanicima">¶</a></h3><p><strong>Motivacija:</strong> Jedan procenat o celoj tabeli ne govori ni da li su praznine skoncentrisane u pojedinim
 kolonama, ni da li dolaze od svih ispitanika podjednako. Crtamo zato dva prikaza: raspodelu udela
 praznina po kolonama, i raspodelu broja odgovorenih pitanja po ispitaniku.</p>
 </div>
@@ -9818,7 +9928,7 @@ max        154.0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> praznih je <strong>52,5% svih ćelija</strong>, a medijana po koloni <strong>48,8%</strong> — dakle tipična kolona
+<p><strong>Zapažanje:</strong> Praznih je <strong>52,5% svih ćelija</strong>, a medijana po koloni <strong>48,8%</strong> — dakle tipična kolona
 ankete prazna je kod skoro svakog drugog ispitanika. Raspodela po kolonama je pri tome vrlo neravnomerna:</p>
 <table>
 <thead>
@@ -9860,7 +9970,7 @@ poslednjoj <strong>69,3%</strong>.</p>
 <p>Desni grafik pokazuje raspodelu koja ima <strong>dva grebena</strong>. Medijana je <strong>99</strong> odgovorenih pitanja, ali je
 prvi decil na <strong>10</strong> — dakle <strong>10.750 ispitanika, odnosno 21,9%</strong>, odgovorilo je manje od dvadeset
 pitanja.</p>
-<p><strong>Tumačenje:</strong> tri merenja zajedno daju sliku koju nijedno samo ne bi.</p>
+<p><strong>Tumačenje:</strong> Tri merenja zajedno daju sliku koju nijedno samo ne bi.</p>
 <p>Da je nedostajanje slučajno, ne bi raslo duž redosleda kolona ni imalo dva grebena po ispitanicima.
 Ovako oba nalaza govore isto: <strong>jedan deo ispitanika anketu nije prošao do kraja.</strong> Skup se, dakle, sastoji
 od onih koji su prošli većinu pitanja i od većeg broja onih koji su odustali blizu početka, i ta druga
@@ -9887,7 +9997,7 @@ uvoda se ne vidi. Zato kandidate ne biramo napamet nego po meri.</p>
 <p>Regresija predviđa brojčanu veličinu koja ima dovoljno različitih vrednosti da se o njoj ima šta reći,
 pa gledamo <strong>brojčane kolone sa najviše različitih vrednosti</strong>. Uz svaku nas zanima i koliko je
 popunjena, jer kolona koju je odgovorila šačica ispitanika ne može biti ciljna promenljiva.</p>
-<h3 id="Grafik-4-%E2%80%94-raspodela-kandidata">Grafik 4 — raspodela kandidata<a class="anchor-link" href="#Grafik-4-%E2%80%94-raspodela-kandidata">¶</a></h3><p><strong>Motivacija:</strong> uputstvo traži da se u opisu skupa prikaže raspodela promenljive koja bi se predviđala.
+<h3 id="Grafik-4-%E2%80%94-raspodela-kandidata">Grafik 4 — raspodela kandidata<a class="anchor-link" href="#Grafik-4-%E2%80%94-raspodela-kandidata">¶</a></h3><p><strong>Motivacija:</strong> Uputstvo traži da se u opisu skupa prikaže raspodela promenljive koja bi se predviđala.
 Crtamo je onako kako se raspodela brojčane kolone i crta — histogramom, sa vrednostima na običnoj osi —
 i uz grafik ispisujemo opisnu statistiku, da imamo i brojeve a ne samo sliku.</p>
 </div>
@@ -10031,7 +10141,7 @@ ispitanika sa iznosom preko milion:       46
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> posle <code>ResponseId</code>, koji je redni broj ispitanika i ne predviđa ništa, dve brojčane kolone
+<p><strong>Zapažanje:</strong> Posle <code>ResponseId</code>, koji je redni broj ispitanika i ne predviđa ništa, dve brojčane kolone
 sa najviše različitih vrednosti su <strong><code>ConvertedCompYearly</code> (6.234)</strong> i <strong><code>CompTotal</code> (2.676)</strong> — obe se po
 imenu tiču kompenzacije. Slede <code>ToolCountWork</code> (114), <code>ToolCountPersonal</code> (87), <code>YearsCode</code> (78) i
 <code>WorkExp</code> (72), dakle red veličine manje različitih vrednosti.</p>
@@ -10046,7 +10156,7 @@ stubićima zajedno ostaje <strong>70</strong> ljudi.</p>
 puta</strong> veći od medijane, devedeset deveti percentil <strong>6.782 puta</strong> veći od prvog, a aritmetička sredina
 <strong>1,35 puta</strong> veća od medijane. Na krajevima su vrednosti koje ne izgledaju kao godišnja plata: <strong>304</strong>
 ispitanika prijavila su iznos manji od sto, a <strong>46</strong> veći od milion.</p>
-<p><strong>Tumačenje:</strong> histogram na običnoj osi ovde ne pokazuje ništa, i to samo po sebi jeste nalaz. Da bi
+<p><strong>Tumačenje:</strong> Histogram na običnoj osi ovde ne pokazuje ništa, i to samo po sebi jeste nalaz. Da bi
 99,7% vrednosti palo u jedan od šezdeset stubića, najveće vrednosti moraju biti <strong>mnogo puta</strong> veće od
 onih oko kojih se gomila većina. Isto govore i brojevi: kad je devedeset deveti percentil skoro sedam
 hiljada puta veći od prvog, vrednosti se protežu preko nekoliko redova veličine.</p>

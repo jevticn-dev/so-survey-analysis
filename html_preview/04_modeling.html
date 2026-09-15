@@ -7928,10 +7928,10 @@ prag značajnosti kroz ceo notebook: 0.05
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> svih pet provera prolazi. Podela je <strong>80 : 20</strong>, kolone su iste i istim redom, praznih
+<p><strong>Zapažanje:</strong> Svih pet provera prolazi. Podela je <strong>80 : 20</strong>, kolone su iste i istim redom, praznih
 polja nema ni u jednom skupu, ciljna promenljiva je popunjena svuda, a <code>log_comp</code> se poklapa sa
 logaritmom kompenzacije.</p>
-<p><strong>Tumačenje:</strong> isporuka iz prethodnog notebook-a je stigla cela i možemo da nastavimo. Poslednja provera
+<p><strong>Tumačenje:</strong> Isporuka iz prethodnog notebook-a je stigla cela i možemo da nastavimo. Poslednja provera
 je jedina koja nije rutinska — njome smo isključili mogućnost da modelujemo kolonu koja više ne odgovara
 plati. Da je tu nešto pošlo naopako, model bi se i dalje uredno namestio, samo na pogrešnu veličinu, pa
 bi greška izašla na videlo tek pri tumačenju koeficijenata, ako uopšte.</p>
@@ -8050,12 +8050,12 @@ ispitanika sa platom ispod 1.000 USD: 89 (0.61% trening skupa)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> prediktora ima <strong>427</strong>, od čega <strong>394 brojčanih</strong> i <strong>33 kategorijske</strong> kolone. Najveći
+<p><strong>Zapažanje:</strong> Prediktora ima <strong>427</strong>, od čega <strong>394 brojčanih</strong> i <strong>33 kategorijske</strong> kolone. Najveći
 deo su promenljive koje smo sami izveli: <strong>314</strong> kolona po stavci, 16 brojeva izabranih stavki, 15
 indikatora neodgovaranja i 7 odnosa zadržanog. Nasleđenih anketnih kolona je <strong>75</strong>.</p>
 <p>Ciljna promenljiva u logaritmu ide od <strong>1,431</strong> do <strong>6,000</strong>, sa medijanom <strong>4,910</strong> — u dolarima od
 <strong>27</strong> do <strong>1.000.000</strong>, sa medijanom <strong>81.210</strong>.</p>
-<p><strong>Tumačenje:</strong> odnos je vredan pažnje: od 427 prediktora, njih 352 smo napravili mi, a samo 75 su
+<p><strong>Tumačenje:</strong> Odnos je vredan pažnje: od 427 prediktora, njih 352 smo napravili mi, a samo 75 su
 pitanja iz ankete onakva kakva su stigla. Ako se pokaže da model radi, dobar deo toga je zasluga
 prethodnog notebook-a — ali i obrnuto, ako se pokaže da su te kolone šum, teret je isto na njima.</p>
 <p>Raspon ciljne promenljive podseća i na jedno ograničenje koje nosimo sa sobom. Donja granica od 27
@@ -8201,13 +8201,13 @@ da je test enkodiran po svojim kategorijama: 697 kolona, a ovako ih ima 709
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> vrednosti kojih trening ne poznaje <strong>nema nijedne</strong>, pa enkodiranje ne krije nikakav
+<p><strong>Zapažanje:</strong> Vrednosti kojih trening ne poznaje <strong>nema nijedne</strong>, pa enkodiranje ne krije nikakav
 slučaj. Oba skupa dobijaju <strong>709 kolona</strong>, iste i istim redom, bez praznih polja. Na trening skup to
 znači <strong>21 red po koloni</strong>.</p>
 <p>Najviše se šire <code>Currency</code> (82 kategorije, 81 kolona) i <code>Country</code> (62 kategorije, 61 kolona) — te dve
 same nose 142 od 709 kolona.</p>
 <p>U testu je <strong>12 kolona svuda nula</strong>, a u treningu nijedna. Prva među njima je <code>DevType_Retired</code>.</p>
-<p><strong>Tumačenje:</strong> onih 12 praznih kolona po broju odgovaraju vrednostima koje po prethodnom notebook-u
+<p><strong>Tumačenje:</strong> Onih 12 praznih kolona po broju odgovaraju vrednostima koje po prethodnom notebook-u
 postoje u treningu a ne i u testu, i one su razlog zbog kog enkodiranje po skupu ne bi radilo — tamo bi dale 697
 kolona umesto 709. Ovako model ima koeficijent i za penzionisanog developera, samo ga na test skupu
 nema ko da iskoristi. To nije problem: kolona od samih nula ne utiče ni na jedno predviđanje, a
@@ -8319,7 +8319,7 @@ kolona u testu bez ikakve razlike: 12
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> skale su raspoređene mnogo šire nego što se očekivalo. Najmanju standardnu devijaciju ima
+<p><strong>Zapažanje:</strong> Skale su raspoređene mnogo šire nego što se očekivalo. Najmanju standardnu devijaciju ima
 <code>DevType_Retired</code>, <strong>0,0117</strong>, a najveću <code>YearsCode</code>, <strong>10,47</strong> — odnos je <strong>895 puta</strong>. Kolona bez
 ijedne razlike u treningu nema.</p>
 <p>Posle standardizacije nijedna kolona treninga nema prosek veći od <strong>3,1·10⁻¹⁶</strong> po apsolutnoj vrednosti,
@@ -8329,7 +8329,7 @@ zaokruživanje petnaestak decimala ispod jedinice. Da je prosek zaista pomeren, 
 četvrtoj decimali, kao kod test skupa u redu ispod.
 Test, na koji je primenjena ista transformacija, ima prosek između <strong>−0,049 i 0,075</strong> i standardnu
 devijaciju između <strong>0,000 i 2,449</strong>.</p>
-<p><strong>Tumačenje:</strong> odnos od 895 puta odgovara na pitanje da li je korak potreban — jeste. Bez njega bi
+<p><strong>Tumačenje:</strong> Odnos od 895 puta odgovara na pitanje da li je korak potreban — jeste. Bez njega bi
 <code>YearsCode</code>, koji ide do nekoliko desetina, i indikatorska kolona koja je nula ili jedan ulazili u istu
 kaznu kao da su iste vrste, pa bi Ridge i Lasso birali koje promenljive da zadrže delom po tome u čemu
 su merene.</p>
@@ -8378,7 +8378,7 @@ kolona damo.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Grafik-1-%E2%80%94-koliko-regresija-objasni-od-ciljne-promenljive-koju-ne-mo%C5%BEe-da-zna">Grafik 1 — koliko regresija objasni od ciljne promenljive koju ne može da zna<a class="anchor-link" href="#Grafik-1-%E2%80%94-koliko-regresija-objasni-od-ciljne-promenljive-koju-ne-mo%C5%BEe-da-zna">¶</a></h3><p><strong>Motivacija:</strong> tabela daje osam parova brojeva, ali se iz nje ne vidi <strong>oblik</strong> rasta — da li fit na
+<h3 id="Grafik-1-%E2%80%94-koliko-regresija-objasni-od-ciljne-promenljive-koju-ne-mo%C5%BEe-da-zna">Grafik 1 — koliko regresija objasni od ciljne promenljive koju ne može da zna<a class="anchor-link" href="#Grafik-1-%E2%80%94-koliko-regresija-objasni-od-ciljne-promenljive-koju-ne-mo%C5%BEe-da-zna">¶</a></h3><p><strong>Motivacija:</strong> Tabela daje osam parova brojeva, ali se iz nje ne vidi <strong>oblik</strong> rasta — da li fit na
 promešanoj ciljnoj promenljivoj raste postepeno sa svakom dodatom kolonom ili tek na kraju odskoči. To je
 ono što odlučuje da li je problem u broju kolona ili u nekoj njihovoj osobini. Zato uz obe krive crtamo i
 pravu <code>broj kolona / broj redova</code>, kao meru koliko bi se dobilo kad bi svaka kolona doprinosila samo
@@ -8514,7 +8514,7 @@ najveći prilagođeni R² koji promešana postiže u svih 8 koraka: +0.0008
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> prilagođavanje se dešava, i to skoro tačno onoliko koliko sledi iz broja kolona.</p>
+<p><strong>Zapažanje:</strong> Prilagođavanje se dešava, i to skoro tačno onoliko koliko sledi iz broja kolona.</p>
 <p>Crvena kriva <strong>ne stoji na nuli</strong>. Sa deset kolona regresija na promešanoj ciljnoj promenljivoj dobija
 R² od 0,0014, sa dvesta 0,0120, a sa svih 709 kolona <strong>0,0471</strong> — dakle skoro <strong>pet posto</strong> ciljne
 promenljive sa kojom po konstrukciji nema nikakve veze. Njena korelacija sa stvarnom platom je 0,0092.
@@ -8524,7 +8524,7 @@ kraju <strong>0,0485</strong>, a dobijeni R² 0,0471.</p>
 jednom od osam koraka, a na kraju je <strong>−0,0013</strong>.</p>
 <p>Plava kriva raste do <strong>0,7209</strong>, uz prilagođeni R² od <strong>0,7067</strong> — isti broj koji je prethodni notebook
 izmerio na ovom skupu.</p>
-<p><strong>Tumačenje:</strong> ovo je ono što se u gradivu naziva krajem bias-variance krive na kom varijansa preuzima
+<p><strong>Tumačenje:</strong> Ovo je ono što se u gradivu naziva krajem bias-variance krive na kom varijansa preuzima
 posao. Model sa mnogo kolona ima dovoljno slobode da kroz podatke provuče površ koja prati i ono što je
 puki slučaj, a pošto se ta površ ocenjuje na istim redovima na kojima je i nameštena, izgleda uspešno.
 Veličina tog efekta nije stvar procene: prati odnos broja kolona i broja redova, pa se sa 709 kolona na
@@ -8713,12 +8713,12 @@ ista raspodela, tri srednje vrednosti u dolarima:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> prevod je nelinearan, i to menja način na koji se svaki dalji rezultat čita. Greška od <strong>0,05</strong> u logaritmu znači da je
+<p><strong>Zapažanje:</strong> Prevod je nelinearan, i to menja način na koji se svaki dalji rezultat čita. Greška od <strong>0,05</strong> u logaritmu znači da je
 predviđanje <strong>1,12 puta</strong> stvarnog iznosa, dakle promašaj od 12%. Greška od <strong>0,15</strong> daje <strong>1,41 puta</strong>
 (41%), a greška od <strong>0,30</strong> tačno <strong>2,00 puta</strong>, dakle promašaj od 100%.</p>
 <p>Standardna devijacija ciljne promenljive je <strong>0,4390</strong> u logaritmu. Prosek logaritma je <strong>4,8298</strong>, što
 je <strong>67.584 dolara</strong>, a medijana <strong>4,9096</strong>, odnosno <strong>81.210</strong>.</p>
-<p><strong>Tumačenje:</strong> prva tabela daje skalu na kojoj ćemo čitati sve dalje. Ako model dobije RMSE oko 0,30, to
+<p><strong>Tumačenje:</strong> Prva tabela daje skalu na kojoj ćemo čitati sve dalje. Ako model dobije RMSE oko 0,30, to
 nije „mala greška u logaritmu" nego promašaj od dvostruko — što za predviđanje plate nije upotrebljivo.
 Da bi predviđanje bilo u okviru četvrtine, greška mora da padne ispod 0,10.</p>
 <p>Razlika proseka i medijane logaritma pokazuje isto ono što je prethodni notebook našao kod asimetrije: i
@@ -8875,12 +8875,12 @@ R² po pojedinačnom delu, pri 10 delova:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> broj delova ne menja rezultat. Sa 5 delova model sa samom zemljom dobija R² <strong>0,5421</strong>, sa
+<p><strong>Zapažanje:</strong> Broj delova ne menja rezultat. Sa 5 delova model sa samom zemljom dobija R² <strong>0,5421</strong>, sa
 10 delova <strong>0,5429</strong> — razlika je na trećoj decimali. R² po pojedinačnim delovima kreće se od <strong>0,5188</strong>
 do <strong>0,5727</strong>, dakle raspon je <strong>0,0539</strong>.</p>
 <p>Provera metode prolazi, i to jasnije nego što se očekivalo. Na promešanoj ciljnoj promenljivoj sa svih
 709 kolona R² na trening skupu iznosi <strong>+0,0471</strong>, a po unakrsnoj validaciji <strong>−0,0573</strong>.</p>
-<p><strong>Tumačenje:</strong> to što 5 i 10 delova daju isto znači da izbor nije taj koji vodi rezultat, pa uzimamo
+<p><strong>Tumačenje:</strong> To što 5 i 10 delova daju isto znači da izbor nije taj koji vodi rezultat, pa uzimamo
 <strong>10 delova</strong> — više dela za učenje po prolazu, a cena je zanemarljiva. Raspon od 0,0539 između najgoreg
 i najboljeg dela je pri tome podsetnik da jedna podela ne bi bila dovoljna: da smo uzeli samo jedan
 validacioni skup, mogli smo dobiti 0,52 ili 0,57 zavisno od toga koji je ispao.</p>
@@ -8901,7 +8901,7 @@ ljudi. Sve dalje merimo drugim.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.3-Pod:-predvi%C4%91anje-bez-ijednog-prediktora">2.3 Pod: predviđanje bez ijednog prediktora<a class="anchor-link" href="#2.3-Pod:-predvi%C4%91anje-bez-ijednog-prediktora">¶</a></h3><p>Prvi stepenik je najniži zamisliv. Svakom ispitaniku damo <strong>isti broj</strong>, i to je celo predviđanje —
+<h3 id="2.3-Donja-granica:-predvi%C4%91anje-bez-ijednog-prediktora">2.3 Donja granica: predviđanje bez ijednog prediktora<a class="anchor-link" href="#2.3-Donja-granica:-predvi%C4%91anje-bez-ijednog-prediktora">¶</a></h3><p>Prvi stepenik je najniži zamisliv. Svakom ispitaniku damo <strong>isti broj</strong>, i to je celo predviđanje —
 nijedna kolona se ne gleda. Taj broj se, kao i sve ostalo, računa <strong>na delu na kom se uči</strong> pa primenjuje
 na izostavljeni deo, dakle prolazi kroz istu unakrsnu validaciju kao pravi modeli. To je najgore što se
 može uraditi a da se i dalje zove predviđanje, i ništa što u nastavku nazovemo modelom ne sme biti gore.</p>
@@ -8977,16 +8977,16 @@ prosek treninga     0.4390  0.3054  -0.0001     2.75x    2.02x      44.8%       
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> dve konstante se razlikuju, i to na predvidiv način. <strong>Prosek</strong> daje niži RMSE
+<p><strong>Zapažanje:</strong> Dve konstante se razlikuju, i to na predvidiv način. <strong>Prosek</strong> daje niži RMSE
 (<strong>0,4390</strong> naspram 0,4462) i R² bliži nuli (<strong>−0,0001</strong> naspram −0,0330). <strong>Medijana</strong> daje niži MAE
 (<strong>0,2965</strong> naspram 0,3054), manji tipičan promašaj (<strong>42,8%</strong> naspram 44,8%) i više ispitanika u okviru
 dvostruko (<strong>66,4%</strong> naspram 62,2%).</p>
-<p><strong>Tumačenje:</strong> rezultat je provera da merila rade ono što od njih očekujemo, a ne nalaz o podacima —
+<p><strong>Tumačenje:</strong> Rezultat je provera da merila rade ono što od njih očekujemo, a ne nalaz o podacima —
 prosek pobeđuje tamo gde se greška kvadrira, medijana tamo gde se ne kvadrira, tačno kao što sledi iz
 definicija. Da je ispalo obrnuto, tražili bismo grešku u kodu.</p>
-<p>Praktična posledica je da <strong>pod nije jedan broj nego zavisi od merila</strong>, pa ćemo u nastavku navoditi oba.
-Za R² uzimamo prosek kao pod, jer je R² građen oko kvadratne greške.</p>
-<p>Oba poda su pri tome <strong>negativna</strong>. To nije greška: konstanta se računa na delu za učenje pa
+<p>Praktična posledica je da <strong>donja granica nije jedan broj nego zavisi od merila</strong>, pa ćemo u nastavku navoditi oba.
+Za R² uzimamo prosek kao donju granicu, jer je R² građen oko kvadratne greške.</p>
+<p>Obe donje granice su pri tome <strong>negativne</strong>. To nije greška: konstanta se računa na delu za učenje pa
 primenjuje na izostavljeni deo, i time je za taj deo neznatno pogrešna. Nula na unakrsnom R² je, dakle,
 već malo bolja od ničega.</p>
 </div>
@@ -8999,7 +8999,7 @@ već malo bolja od ničega.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.4-Koje-pojedina%C4%8Dno-obele%C5%BEje-je-najja%C4%8De">2.4 Koje pojedinačno obeležje je najjače<a class="anchor-link" href="#2.4-Koje-pojedina%C4%8Dno-obele%C5%BEje-je-najja%C4%8De">¶</a></h3><p>Pod je prenizak da bi bio koristan. Model sa 709 kolona koji pobedi konstantu nije pokazao ništa — pravo
+<h3 id="2.4-Koje-pojedina%C4%8Dno-obele%C5%BEje-je-najja%C4%8De">2.4 Koje pojedinačno obeležje je najjače<a class="anchor-link" href="#2.4-Koje-pojedina%C4%8Dno-obele%C5%BEje-je-najja%C4%8De">¶</a></h3><p>Donja granica je preniska da bi bila korisna. Model sa 709 kolona koji pobedi konstantu nije pokazao ništa — pravo
 pitanje je da li pobeđuje <strong>jedno jedino anketno pitanje</strong>.</p>
 <p>Iz prethodnog notebook-a nosimo uverenje da je to pitanje <code>Country</code>, ali ono je tamo izmereno drugim
 merilom (prilagođeni R² na trening skupu) i na drugačije sažetoj promenljivoj. Ovde ga zato ne
@@ -9144,21 +9144,21 @@ druga referentna tačka je time određena: samo Country
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> merenje potvrđuje ono što smo nosili iz prethodnog notebook-a, ali uz dve stvari koje se
+<p><strong>Zapažanje:</strong> Merenje potvrđuje ono što smo nosili iz prethodnog notebook-a, ali uz dve stvari koje se
 odatle nisu videle.</p>
 <p><strong><code>Country</code> je najjače</strong>, sa CV R² od <strong>0,5429</strong>. Drugo je <strong><code>Currency</code> sa 0,4821</strong>, dakle svega
 <strong>0,0608</strong> iza. Treće je <code>SODuration</code> sa <strong>0,1829</strong> — a razlika između drugog i trećeg je <strong>0,2992</strong>,
 skoro pet puta veća od razlike između prvog i drugog.</p>
 <p>Zatim slede <code>Age</code> (0,1552), <code>YearsCode</code> (0,1479) i <code>WorkExp</code> (0,1280). Od <strong>43</strong> obeležja, njih <strong>42</strong>
 ima pozitivan CV R², a jedno negativan.</p>
-<p><strong>Tumačenje:</strong> letvica je time izmerena, a ne uvezena: <strong>0,5429</strong>, i to je <code>Country</code>.</p>
+<p><strong>Tumačenje:</strong> Letvica je time izmerena, a ne uvezena: <strong>0,5429</strong>, i to je <code>Country</code>.</p>
 <p>Ali dva obeležja se odvajaju od svih ostalih, ne jedno. Da smo gledali samo prvo mesto, propustili bismo
 da valuta sama za sebe objašnjava skoro koliko i zemlja. To ima isti uzrok koji je prethodni notebook
 našao kad je merio šta valuta dodaje preko zemlje: obe nose istu vrstu podatka — na kom tržištu ispitanik
 zarađuje — pa se i pojedinačno ponašaju slično. Za nas to znači da bi bilo pogrešno reći „samo zemlja
 nosi signal"; tačnije je da ga nosi <strong>zemlja i valuta zajedno</strong>, a sve ostalo je reda veličine desetak
 puta manje.</p>
-<p>To što jedno obeležje ima negativan CV R² je pri tome poučno na isti način kao pod iz 2.3: obeležje koje
+<p>To što jedno obeležje ima negativan CV R² je pri tome poučno na isti način kao donja granica iz 2.3: obeležje koje
 ne nosi ništa na unakrsnoj validaciji ne dobija nulu nego <strong>malo manje od nule</strong>, jer model potroši jedan
 koeficijent na šum.</p>
 </div>
@@ -9249,12 +9249,12 @@ letvica koju model sa svim promenljivama mora da pređe: 0.6668
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> sva anketna obeležja zajedno daju CV R² od <strong>0,6668</strong>, sa <strong>357</strong> kolona. Sama zemlja nosi
+<p><strong>Zapažanje:</strong> Sva anketna obeležja zajedno daju CV R² od <strong>0,6668</strong>, sa <strong>357</strong> kolona. Sama zemlja nosi
 <strong>81%</strong> te vrednosti, a sve ostalo iz ankete dodaje <strong>+0,1239</strong>.</p>
 <p>Iz iste tabele se vidi i šta to znači u dolarima: tipičan promašaj pada sa 32,1% kod same zemlje na
 <strong>25,5%</strong>, odnosno sa 22.186 na <strong>17.568 dolara</strong>, a udeo ispitanika u okviru dvostruko raste sa
 79,2% na <strong>86,7%</strong>.</p>
-<p><strong>Tumačenje:</strong> ovo je letvica za sve dalje, i postavljena je pre prvog modela. Naših <strong>352</strong> kolone —
+<p><strong>Tumačenje:</strong> Ovo je letvica za sve dalje, i postavljena je pre prvog modela. Naših <strong>352</strong> kolone —
 koje posle enkodiranja daju 352 kolone modela — moraju da pređu <strong>0,6668</strong> da bi bile opravdane, i to je
 mnogo zahtevnije od 0,5429 koliko daje sama zemlja.</p>
 <p>Zašto se ne poredimo sa zemljom, nije samo po sebi jasno. Model sa 709 kolona bi zemlju pobedio i bez
@@ -9274,7 +9274,7 @@ kandidat; upravo smo u 1.5 videli koliko slobode ona ima.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Grafik-2-%E2%80%94-kako-se-gre%C5%A1ka-su%C5%BEava-sa-svakim-stepenikom">Grafik 2 — kako se greška sužava sa svakim stepenikom<a class="anchor-link" href="#Grafik-2-%E2%80%94-kako-se-gre%C5%A1ka-su%C5%BEava-sa-svakim-stepenikom">¶</a></h3><p><strong>Motivacija:</strong> tabela daje po jedan broj za svaki stepenik, ali sažima celu raspodelu u medijanu i
+<h3 id="Grafik-2-%E2%80%94-kako-se-gre%C5%A1ka-su%C5%BEava-sa-svakim-stepenikom">Grafik 2 — kako se greška sužava sa svakim stepenikom<a class="anchor-link" href="#Grafik-2-%E2%80%94-kako-se-gre%C5%A1ka-su%C5%BEava-sa-svakim-stepenikom">¶</a></h3><p><strong>Motivacija:</strong> Tabela daje po jedan broj za svaki stepenik, ali sažima celu raspodelu u medijanu i
 procenat. Nas zanima i <strong>oblik</strong>: da li se sa svakim stepenikom greška sužava ravnomerno kod svih, ili se
 popravlja kod većine a ostaje ista kod manjine. To je važno jer se dva modela sa istim MAE mogu ponašati
 sasvim različito — jedan promašuje malo kod svih, drugi tačno kod većine a katastrofalno kod nekih.</p>
@@ -9366,7 +9366,7 @@ sva anketna obeležja   preceni kod 49.1% ispitanika, promaši više od 4x kod  
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> sva tri stepenika su usredsređena oko jedinice, a razlikuju se po širini i po repovima.</p>
+<p><strong>Zapažanje:</strong> Sva tri stepenika su usredsređena oko jedinice, a razlikuju se po širini i po repovima.</p>
 <p>Srednjih pola ispitanika je kod <strong>medijane treninga</strong> između <strong>0,65 i 1,67 puta</strong> stvarne plate, kod
 <strong>same zemlje</strong> između <strong>0,71 i 1,37</strong>, a kod <strong>svih anketnih obeležja</strong> između <strong>0,76 i 1,28</strong>. Peti i
 devedeset peti percentil idu od <strong>0,37 i 8,73</strong> kod medijane, preko <strong>0,36 i 2,75</strong> kod zemlje, do
@@ -9378,7 +9378,7 @@ svih obeležja.</p>
 grafika</strong>, sabrano u poslednju kutiju: kod medijane treninga <strong>654</strong> ispitanika, a kod svih anketnih
 obeležja <strong>151</strong>. Bez tog sabiranja bi ti redovi sa slike prosto nedostajali, pa bi grafik izgledao bolje
 nego što stvari stoje.</p>
-<p><strong>Tumačenje:</strong> oblik objašnjava zašto uz medijanu promašaja gledamo i udeo u okviru dvostruko. Kod
+<p><strong>Tumačenje:</strong> Oblik objašnjava zašto uz medijanu promašaja gledamo i udeo u okviru dvostruko. Kod
 medijane treninga je „tipičan" promašaj 42,8%, ali kod svakog devetog ispitanika predviđanje nije ni
 približno upotrebljivo. Sa svim anketnim obeležjima taj udeo pada na <strong>3,4%</strong> — a tipičan
 promašaj i dalje ostaje <strong>25,5%</strong>, dakle četvrtina plate.</p>
@@ -9436,7 +9436,7 @@ nad trening skupom, na istim delovima za svaki model.</p>
 <li><strong>unakrsna validacija radi ono zbog čega je uvedena.</strong> Na promešanoj ciljnoj promenljivoj daje −0,0573,
 dok trening R² daje +0,0471. Izbor između 5 i 10 delova ne menja rezultat, ali jedna jedina podela bi
 ga menjala — R² po delovima ide od 0,5188 do 0,5727;</li>
-<li><strong>pod zavisi od merila.</strong> Prosek pobeđuje po RMSE, medijana po MAE, i oba poda su blago negativna;</li>
+<li><strong>donja granica zavisi od merila.</strong> Prosek pobeđuje po RMSE, medijana po MAE, i obe donje granice su blago negativne;</li>
 <li><strong>zemlja i valuta se odvajaju od svega ostalog.</strong> <code>Country</code> daje 0,5429, <code>Currency</code> 0,4821, a treće
 obeležje po jačini svega 0,1829. Nije, dakle, tačno da signal nosi samo zemlja;</li>
 <li><strong>letvica za prethodni notebook je 0,6668.</strong> Naših 352 kolone opravdane su samo onoliko koliko model
@@ -9586,12 +9586,12 @@ prelazi letvicu: True
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> izbačene su <code>Country_Indonesia</code> i <code>Currency_NPR Nepalese rupee</code>. Na trening skupu model
+<p><strong>Zapažanje:</strong> Izbačene su <code>Country_Indonesia</code> i <code>Currency_NPR Nepalese rupee</code>. Na trening skupu model
 daje R² <strong>0,7209</strong> i prilagođeni <strong>0,7067</strong>, uz F = <strong>50,8</strong> i standardnu grešku ostatka <strong>0,2377</strong> u
 logaritmu. Unakrsnom validacijom dobija <strong>0,6769</strong> — tipičan promašaj <strong>24,8%</strong>, a kod <strong>87,5%</strong>
 ispitanika predviđanje je u okviru dvostruko. Naspram letvice iz 2.5 (<strong>0,6668</strong>) naših 352 kolone dodaju
 <strong>+0,0101</strong>.</p>
-<p><strong>Tumačenje:</strong> model radi, ali dva broja traže objašnjenje.</p>
+<p><strong>Tumačenje:</strong> Model radi, ali dva broja traže objašnjenje.</p>
 <p>Razlika trening i unakrsnog R² je <strong>0,0440</strong>, a u 1.5 smo izmerili da promešana ciljna promenljiva na
 treningu dobija 0,0471. Skoro celu razliku, dakle, objašnjava prilagođavanje šumu — i to je bilo
 izmereno pre nego što je model napravljen.</p>
@@ -9622,7 +9622,7 @@ ih podelimo na deset jednakih delova — <strong>decila</strong> — i u svakom 
 Decil je, dakle, desetina poređanog niza: prvi decil su najnižih deset posto predviđanja, poslednji
 najviših deset posto, a granice među njima su 10, 20, ... 90. percentil. Ako je rasipanje ujednačeno, tih
 deset brojeva izlaze približno isti.</p>
-<h3 id="Grafik-3-%E2%80%94-rasipanje-ostatka,-u-dolarima-i-u-logaritmu">Grafik 3 — rasipanje ostatka, u dolarima i u logaritmu<a class="anchor-link" href="#Grafik-3-%E2%80%94-rasipanje-ostatka,-u-dolarima-i-u-logaritmu">¶</a></h3><p><strong>Motivacija:</strong> homoskedastičnost je tvrdnja o obliku, pa se najbolje vidi na slici. Ako je logaritam bio
+<h3 id="Grafik-3-%E2%80%94-rasipanje-ostatka,-u-dolarima-i-u-logaritmu">Grafik 3 — rasipanje ostatka, u dolarima i u logaritmu<a class="anchor-link" href="#Grafik-3-%E2%80%94-rasipanje-ostatka,-u-dolarima-i-u-logaritmu">¶</a></h3><p><strong>Motivacija:</strong> Homoskedastičnost je tvrdnja o obliku, pa se najbolje vidi na slici. Ako je logaritam bio
 pravi izbor, levi panel treba da pokaže lepezu koja se širi, a desni pojas ujednačene širine.</p>
 </div>
 </div>
@@ -9728,7 +9728,7 @@ logaritam plate — standardna devijacija ostatka po decilu predviđene vrednost
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> nijedan panel ne pokazuje ujednačen pojas.</p>
+<p><strong>Zapažanje:</strong> Nijedan panel ne pokazuje ujednačen pojas.</p>
 <p>Kod <strong>sirovih dolara</strong> rasipanje raste sa predviđenom vrednošću — standardna devijacija ostatka ide od
 <strong>23.258</strong> dolara u prvom decilu do <strong>71.974</strong> u poslednjem, dakle <strong>3,09 puta</strong> veća.</p>
 <p>Kod <strong>logaritma</strong> je lepeza <strong>obrnuta</strong>: <strong>0,483</strong> u prvom decilu, <strong>0,139</strong> u poslednjem. Ali odnos prvog
@@ -9738,7 +9738,7 @@ je u <strong>prva dva decila</strong>.</p>
 <p>Levi panel pokazuje i nešto što se rasipanja ne tiče: predviđena vrednost ide <strong>ispod nule</strong>. Model na
 sirovim dolarima predviđa negativnu platu kod <strong>419</strong> ispitanika, najniže <strong>−51.028</strong> dolara. Model na
 logaritmu to ne može — najniže predviđa <strong>838</strong>.</p>
-<p><strong>Tumačenje:</strong> odgovor je „da, ali ne do kraja", i znamo gde je granica. Logaritam je ispravio lepezu
+<p><strong>Tumačenje:</strong> Odgovor je „da, ali ne do kraja", i znamo gde je granica. Logaritam je ispravio lepezu
 koja je u dolarima rasla sa nivoom plate, ali je napravio novu na dnu — kod ispitanika sa vrlo malim
 prijavljenim iznosima, koje smo svesno zadržali. U dolarima oni stoje zbijeni uz nulu; u logaritmu se
 razvlače ulevo.</p>
@@ -9800,7 +9800,7 @@ predavanja je <code>2(p+1)/n</code>. Brojevima se bavi odeljak 3.4; ovde je dovo
 stoje ispitanici sa neobičnom kombinacijom odgovora.</p>
 <p>Prvi panel ponavlja desni panel Grafika 3, ali sa dodatim <strong>prosekom ostatka po decilu</strong>, jer se iz
 oblaka od 14.608 tačaka sistematsko odstupanje ne vidi golim okom.</p>
-<h3 id="Grafik-4-%E2%80%94-%C4%8Detiri-standardna-dijagnosti%C4%8Dka-prikaza">Grafik 4 — četiri standardna dijagnostička prikaza<a class="anchor-link" href="#Grafik-4-%E2%80%94-%C4%8Detiri-standardna-dijagnosti%C4%8Dka-prikaza">¶</a></h3><p><strong>Motivacija:</strong> svaki panel proverava drugu pretpostavku, pa se zajedno čitaju kao lista provera iz
+<h3 id="Grafik-4-%E2%80%94-%C4%8Detiri-standardna-dijagnosti%C4%8Dka-prikaza">Grafik 4 — četiri standardna dijagnostička prikaza<a class="anchor-link" href="#Grafik-4-%E2%80%94-%C4%8Detiri-standardna-dijagnosti%C4%8Dka-prikaza">¶</a></h3><p><strong>Motivacija:</strong> Svaki panel proverava drugu pretpostavku, pa se zajedno čitaju kao lista provera iz
 gornje tabele. Crtamo ih u istom rasporedu u kom ih daje <code>plot(model)</code>, da se mogu porediti sa onim što
 smo videli na vežbama.</p>
 </div>
@@ -9938,7 +9938,7 @@ normalnost: asimetrija -1.088   spljoštenost +9.677   (kod normalne oba nula)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> četiri panela daju tri različita odgovora.</p>
+<p><strong>Zapažanje:</strong> Četiri panela daju tri različita odgovora.</p>
 <p><strong>Residuals vs Fitted — linearnost stoji.</strong> Oblak je centriran oko nule kroz ceo raspon — prosek ostatka po decilima ne
 odstupa od nule više od <strong>0,040</strong>.</p>
 <p><strong>Scale-Location — rasipanje nije ujednačeno.</strong> Prosek korena standardizovanog ostatka pada sa <strong>1,12</strong> u prvom decilu na
@@ -9951,7 +9951,7 @@ je <strong>−1,088</strong>, spljoštenost <strong>+9,677</strong>, a ostatka i
 0,27% koliko bi dala normalna raspodela.</p>
 <p><strong>Residuals vs Leverage.</strong> Većina tačaka je pri niskoj poluzi, ali se vidi rep koji ide do jedinice, i tamošnje tačke
 imaju ostatak oko nule.</p>
-<p><strong>Tumačenje:</strong> linearnost je u redu, i to nije bilo zagarantovano — u prethodnom notebook-u smo izmerili
+<p><strong>Tumačenje:</strong> Linearnost je u redu, i to nije bilo zagarantovano — u prethodnom notebook-u smo izmerili
 da veza broja izabranih stavki i plate nije prava linija, ali kod 707 kolona ostale imaju dovoljno
 slobode da to pokriju.</p>
 <p>Druge dve pretpostavke su narušene i imaju isti uzrok: onaj levi rep. Praktična posledica je jedna i
@@ -10025,7 +10025,7 @@ predviđa <strong>tačno</strong>, sa ostatkom nula — ne zato što ga je razum
 parametar.</p>
 <p>Jedna tehnička napomena: Cook-ova distanca u imeniocu ima <code>(1 − poluga)²</code>, pa kod poluge jednake jedinici
 deli nulom. Takve ispitanike izdvajamo posebno, jer su oni sami po sebi nalaz.</p>
-<h3 id="Grafik-5-%E2%80%94-kako-je-poluga-raspore%C4%91ena">Grafik 5 — kako je poluga raspoređena<a class="anchor-link" href="#Grafik-5-%E2%80%94-kako-je-poluga-raspore%C4%91ena">¶</a></h3><p><strong>Motivacija:</strong> iz Grafika 4 se vidi da rep postoji, ali ne i koliko je gust — a to je razlika između
+<h3 id="Grafik-5-%E2%80%94-kako-je-poluga-raspore%C4%91ena">Grafik 5 — kako je poluga raspoređena<a class="anchor-link" href="#Grafik-5-%E2%80%94-kako-je-poluga-raspore%C4%91ena">¶</a></h3><p><strong>Motivacija:</strong> Iz Grafika 4 se vidi da rep postoji, ali ne i koliko je gust — a to je razlika između
 „nekoliko neobičnih ispitanika" i „model se drži na malom broju ljudi". Crtamo raspodelu poluge, sa
 uspravnom osom u logaritmu, jer je inače vrh oko prosečne vrednosti toliko visok da se rep ne vidi.</p>
 </div>
@@ -10147,7 +10147,7 @@ ispitanici koje model predviđa tačno (poluga ~ 1):
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> grafik pokazuje jedan visok vrh i dugačak, <strong>redak</strong> rep. Zbog logaritamske ose vidi se da
+<p><strong>Zapažanje:</strong> Grafik pokazuje jedan visok vrh i dugačak, <strong>redak</strong> rep. Zbog logaritamske ose vidi se da
 u repu iza granice stoje desetine, a ne hiljade ispitanika, i da su vrednosti blizu jedinice
 pojedinačne.</p>
 <p>Brojevi razdvajaju tri pojma:</p>
@@ -10160,7 +10160,7 @@ pojedinačne.</p>
 dvadeset puta manja od granice, i nijedan ispitanik je ne prelazi. Najuticajniji je onaj sa platom
 <strong>220.000</strong> dolara kome model predviđa <strong>2.783</strong>, pa dva sa prijavljenih <strong>30</strong> dolara.</p>
 <p>Od <strong>89</strong> ispitanika sa platom ispod hiljadu dolara, <strong>80</strong> su netipične vrednosti.</p>
-<p><strong>Tumačenje:</strong> ovo je bolja vest nego što je Grafik 4 sugerisao, uz jedan izuzetak.</p>
+<p><strong>Tumačenje:</strong> Ovo je bolja vest nego što je Grafik 4 sugerisao, uz jedan izuzetak.</p>
 <p>Nijedan pojedinačni ispitanik ne vuče model — pri 14.608 redova jedan red i ne može mnogo da pomeri
 procenu, pa je Cook-ova distanca svuda mala. To znači da ne treba ništa izbacivati, i da bi izbacivanje
 bilo pogrešno: čišćenje je završeno u prethodnom notebook-u, a vraćanje na njega ovde značilo bi da
@@ -10383,7 +10383,7 @@ najviše promenila, <strong>devet su valute</strong>: <code>Currency_EUR</code> 
 <code>Country_United States of America</code>, sa <strong>+0,1561</strong> na <strong>+0,1005</strong>.</p>
 <p>Jedan red ide u suprotnom smeru: <code>Currency_INR Indian rupee</code> bez kazne ima koeficijent <strong>−0,0002</strong>,
 dakle praktično nulu, a sa kaznom <strong>−0,0439</strong>.</p>
-<p><strong>Tumačenje:</strong> rezultat je koristan i kad je mali, jer kaže nešto o tome gde je problem.</p>
+<p><strong>Tumačenje:</strong> Rezultat je koristan i kad je mali, jer kaže nešto o tome gde je problem.</p>
 <p>Prvo, tabela je kolinearnost uhvaćena na delu. Valuta i zemlja nose istu vrstu podatka — na kom tržištu
 ispitanik zarađuje — pa regresija bez kazne sme da najveći deo tog efekta pripiše jednoj koloni a drugoj
 skoro ništa. Tako je indijskoj rupiji dala nulu, a evru najveći koeficijent u celom modelu. Ridge tu
@@ -10406,7 +10406,7 @@ ih izbaci — i to je Lasso.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Grafik-6-%E2%80%94-%C5%A1ta-kazna-radi-sa-gre%C5%A1kom-i-sa-koeficijentima">Grafik 6 — šta kazna radi sa greškom i sa koeficijentima<a class="anchor-link" href="#Grafik-6-%E2%80%94-%C5%A1ta-kazna-radi-sa-gre%C5%A1kom-i-sa-koeficijentima">¶</a></h3><p><strong>Motivacija:</strong> iz jedne najbolje vrednosti λ ne vidi se oblik. Zanima nas da li greška ima jasan minimum
+<h3 id="Grafik-6-%E2%80%94-%C5%A1ta-kazna-radi-sa-gre%C5%A1kom-i-sa-koeficijentima">Grafik 6 — šta kazna radi sa greškom i sa koeficijentima<a class="anchor-link" href="#Grafik-6-%E2%80%94-%C5%A1ta-kazna-radi-sa-gre%C5%A1kom-i-sa-koeficijentima">¶</a></h3><p><strong>Motivacija:</strong> Iz jedne najbolje vrednosti λ ne vidi se oblik. Zanima nas da li greška ima jasan minimum
 ili je ravna, i koliko se koeficijenti skupljaju duž istog raspona — jer to dvoje zajedno pokazuje da li
 je kazna uopšte ono što ovom modelu treba. Crtamo oba u dva panela, sa λ na logaritamskoj osi, jer se
 mreža i pravi logaritamski.</p>
@@ -10491,13 +10491,13 @@ pri najboljoj λ iznosi 0.0656
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> levi panel nema izražen minimum — kriva je gotovo vodoravna, sa vrhom oko λ = 672 i padom
+<p><strong>Zapažanje:</strong> Levi panel nema izražen minimum — kriva je gotovo vodoravna, sa vrhom oko λ = 672 i padom
 prema najmanjim vrednostima kazne koji iznosi svega tri hiljadita dela. Siva linija, koja označava običnu
 regresiju, praktično se poklapa sa levim krajem krive, što je i tačno: pri λ blizu nule Ridge se svodi na
 običnu regresiju.</p>
 <p>Desni panel se menja više: suma kvadrata koeficijenata pada sa <strong>0,1571</strong> pri najslabijoj kazni na
 <strong>0,0598</strong> pri najjačoj, dakle <strong>2,6 puta</strong> duž istog raspona λ. Pri najboljoj λ iznosi <strong>0,0656</strong>.</p>
-<p><strong>Tumačenje:</strong> dva panela zajedno kažu ono što jedan ne bi. Kazna menja koeficijente osetno više nego
+<p><strong>Tumačenje:</strong> Dva panela zajedno kažu ono što jedan ne bi. Kazna menja koeficijente osetno više nego
 što menja grešku: suma kvadrata pada na manje od polovine, a unakrsni R² se pomera samo u trećoj
 decimali. Model, dakle, nije bio zavistan od velikih koeficijenata — mogu se prepoloviti bez gubitka,
 ali se time i ne dobija skoro ništa.</p>
@@ -10670,7 +10670,7 @@ pri najjačoj kazni:    5 kolona, unakrsni R² 0.2102
 <p>Tabela pokazuje i kako to izgleda duž mreže. Pri λ = 0,1 model ima svega <strong>5</strong> kolona i R² <strong>0,2102</strong>;
 pri λ = 0,00924 ima <strong>145</strong> kolona i <strong>0,6523</strong>; pri najmanjoj λ ima <strong>617</strong> kolona i R² koji ponovo
 <strong>pada</strong>, na 0,6811.</p>
-<p><strong>Tumačenje:</strong> ovo je prvi rezultat u notebook-u koji je i bolji i manji.</p>
+<p><strong>Tumačenje:</strong> Ovo je prvi rezultat u notebook-u koji je i bolji i manji.</p>
 <p>Lasso dobija više od Ridge-a, a koristi četrdeset posto manje kolona. To potvrđuje ono što je Ridge samo
 nagovestio: modelu nije štetila veličina koeficijenata nego <strong>broj kolona koje ne nose ništa</strong>. Kad se
 one uklone, greška padne.</p>
@@ -10690,7 +10690,7 @@ odgovor je 423 od 707 kolona.</strong> Koje su to kolone, gleda odeljak 5.2.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Grafik-7-%E2%80%94-gre%C5%A1ka-i-broj-kolona-du%C5%BE-istog-raspona-%CE%BB">Grafik 7 — greška i broj kolona duž istog raspona λ<a class="anchor-link" href="#Grafik-7-%E2%80%94-gre%C5%A1ka-i-broj-kolona-du%C5%BE-istog-raspona-%CE%BB">¶</a></h3><p><strong>Motivacija:</strong> kod Ridge-a je kriva greške bila ravna, pa je izbor λ bio nevažan. Ovde nije očigledno da
+<h3 id="Grafik-7-%E2%80%94-gre%C5%A1ka-i-broj-kolona-du%C5%BE-istog-raspona-%CE%BB">Grafik 7 — greška i broj kolona duž istog raspona λ<a class="anchor-link" href="#Grafik-7-%E2%80%94-gre%C5%A1ka-i-broj-kolona-du%C5%BE-istog-raspona-%CE%BB">¶</a></h3><p><strong>Motivacija:</strong> Kod Ridge-a je kriva greške bila ravna, pa je izbor λ bio nevažan. Ovde nije očigledno da
 li je tako, a uz to nas zanima i drugo pitanje koje Ridge nije mogao da postavi: kako broj zadržanih
 kolona zavisi od kazne, i da li minimum greške pada tamo gde model postaje mali ili tamo gde je još
 uvek velik.</p>
@@ -10778,14 +10778,14 @@ sa upola manje kolona (357): R² 0.6837, gubitak -0.0008
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> za razliku od Ridge-a, ovde kriva greške <strong>ima oblik</strong>. Raste od 0,2102 pri najjačoj kazni
+<p><strong>Zapažanje:</strong> Za razliku od Ridge-a, ovde kriva greške <strong>ima oblik</strong>. Raste od 0,2102 pri najjačoj kazni
 do vrha na <strong>0,6845</strong>, pa se blago spušta na <strong>0,6811</strong> pri najslabijoj. Broj zadržanih kolona
 istovremeno raste od <strong>5</strong> do <strong>617</strong>.</p>
 <p>Vrh greške pada tamo gde model ima 423 kolone — dakle ne na kraju gde ih je najviše, ni blizu mesta gde
 ih je malo.</p>
 <p>Poslednji red ispisa daje i cenu strožeg izbora: sa <strong>357</strong> kolona, dakle upola manje od svih, unakrsni
 R² je <strong>0,6837</strong>, samo <strong>0,0008</strong> ispod najboljeg.</p>
-<p><strong>Tumačenje:</strong> oblik krive je ono zbog čega Lasso ovde radi a Ridge nije.</p>
+<p><strong>Tumačenje:</strong> Oblik krive je ono zbog čega Lasso ovde radi a Ridge nije.</p>
 <p>Levi deo krive pokazuje da model kojem se odseče previše kolona zaista gubi — pri pet kolona objašnjava
 samo pete deo varijanse. Desni deo pokazuje da model kojem se dozvoli previše kolona <strong>takođe</strong> gubi, i
 to je ono što obična regresija nije umela da izbegne. Između njih postoji jasno najbolje mesto, i
@@ -10899,13 +10899,13 @@ nasleđenih kolona zadržano: 249 od 355
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> rezultat je vrlo neravnomeran po grupama, i dva broja su nula.</p>
+<p><strong>Zapažanje:</strong> Rezultat je vrlo neravnomeran po grupama, i dva broja su nula.</p>
 <p><strong>Sve 16 kolona <code>Count_</code> i svih 7 kolona <code>KeptShare_</code> Lasso je spustio na nulu.</strong> Nijedna nije preživela.</p>
 <p>Nasuprot tome, od <strong>314 kolona po stavci preživelo je 168</strong>, dakle više od polovine. Kod nasleđenih
 obeležja: zemlja 48 od 60, valuta 60 od 80, tip posla 20 od 31, rangiranja 25 od 36, a <strong>sve šest
 nasleđenih brojčanih kolona</strong> su ostale.</p>
 <p>Ukupno: od naših 352 kolone preživelo je <strong>174</strong>, a od 355 nasleđenih <strong>249</strong>.</p>
-<p><strong>Tumačenje:</strong> ovo je najoštrija ocena prethodnog notebook-a koju smo mogli da dobijemo, i deli je na dva
+<p><strong>Tumačenje:</strong> Ovo je najoštrija ocena prethodnog notebook-a koju smo mogli da dobijemo, i deli je na dva
 dela.</p>
 <p><strong>Kolone <code>Count_</code> su izgubile posao.</strong> Hipoteza 6 je pokazala da oni nose signal koji zemlja i
 staž ne nose, i to je tada bilo tačno. Ali u prethodnom notebook-u smo, u sekciji 9, izmerili i zašto to
@@ -11116,7 +11116,7 @@ bez obzira na ciljnu promenljivu. Lasso radi bolje jer ciljnu promenljivu gleda.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Grafik-8-%E2%80%94-koliko-se-dobija-svakom-slede%C4%87om-komponentom">Grafik 8 — koliko se dobija svakom sledećom komponentom<a class="anchor-link" href="#Grafik-8-%E2%80%94-koliko-se-dobija-svakom-slede%C4%87om-komponentom">¶</a></h3><p><strong>Motivacija:</strong> iz tabele se vidi da najbolje ispada na kraju mreže, ali ne i <strong>kakvog je oblika</strong> rast.
+<h3 id="Grafik-8-%E2%80%94-koliko-se-dobija-svakom-slede%C4%87om-komponentom">Grafik 8 — koliko se dobija svakom sledećom komponentom<a class="anchor-link" href="#Grafik-8-%E2%80%94-koliko-se-dobija-svakom-slede%C4%87om-komponentom">¶</a></h3><p><strong>Motivacija:</strong> Iz tabele se vidi da najbolje ispada na kraju mreže, ali ne i <strong>kakvog je oblika</strong> rast.
 Ako kriva greške ide uporedo sa krivom objašnjene varijanse prediktora, komponente su korisne po redu
 kojim su poređane; ako se razilaze, poredak je pogrešan za naš posao. Crtamo obe krive zajedno, pa se
 odgovor čita iz toga da li se prate.</p>
@@ -11193,13 +11193,13 @@ komponenata potrebnih da PCR dostigne Lasso: nijedan M do 600 to ne postiže
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> dve krive se <strong>ne prate</strong>. Zelena, objašnjena varijansa prediktora, raste brzo na početku i
+<p><strong>Zapažanje:</strong> Dve krive se <strong>ne prate</strong>. Zelena, objašnjena varijansa prediktora, raste brzo na početku i
 rano prelazi plavu; plava, unakrsni R² za platu, raste sporije i ravnomernije, i do kraja mreže ne stiže
 crvenu liniju koja označava Lasso.</p>
 <p>Kod <strong>M = 100</strong> komponente objašnjavaju 40,8% varijanse prediktora a samo 0,5511 varijanse plate. Kod
 <strong>M = 500</strong> objašnjavaju 93,5% prediktora i 0,6613 plate.</p>
 <p>Nijedan M do 600 ne dostiže Lasso — razlika ostaje <strong>−0,0150</strong>.</p>
-<p><strong>Tumačenje:</strong> razilaženje dve krive je odgovor na pitanje iz motivacije. Komponente <strong>nisu</strong> poređane
+<p><strong>Tumačenje:</strong> Razilaženje dve krive je odgovor na pitanje iz motivacije. Komponente <strong>nisu</strong> poređane
 korisno za naš posao: one koje najviše opisuju kako se ispitanici razlikuju međusobno nisu one koje
 najviše govore o plati.</p>
 <p>To je i praktična granica metode, ne naša greška u primeni. PCA je nenadgledan postupak — ne vidi ciljnu
@@ -11312,7 +11312,7 @@ prosečan udeo jedinica u binarnim kolonama grupe:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> očekivanje se potvrđuje, i razlika je velika.</p>
+<p><strong>Zapažanje:</strong> Očekivanje se potvrđuje, i razlika je velika.</p>
 <table>
 <thead>
 <tr>
@@ -11360,7 +11360,7 @@ a čine 44,4% kolona. Zemlja i valuta zajedno nose <strong>oko dva posto</strong
 prvih pedeset komponenata njihov udeo raste na 14,8% i 14,9%.</p>
 <p>Drugi deo ispisa pokazuje mehanizam: prosečan udeo jedinica je <strong>0,1521</strong> kod kolona po stavci, a
 <strong>0,0165</strong> kod zemlje i <strong>0,0125</strong> kod valute.</p>
-<p><strong>Tumačenje:</strong> ovo objašnjava rezultat iz 6.1 do kraja i bez pretpostavki.</p>
+<p><strong>Tumačenje:</strong> Ovo objašnjava rezultat iz 6.1 do kraja i bez pretpostavki.</p>
 <p>Dummy kolona za jednu zemlju je jedinica kod nepuna dva posto ispitanika, pa se skoro nikad ne menja — a
 kolona koja se retko menja nosi malu varijansu. PCA komponente poređa <strong>po varijansi</strong>, pa takve kolone
 nužno gura na kraj liste. Kolona po stavci se, nasuprot tome, menja kod svakog sedmog ispitanika, pa ulazi
@@ -11510,13 +11510,13 @@ izbor BIC-a (145 kolona) naspram izbora unakrsne validacije (423): unakrsni R² 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> četiri merila <strong>ne biraju isti model</strong>.</p>
+<p><strong>Zapažanje:</strong> Četiri merila <strong>ne biraju isti model</strong>.</p>
 <p>Cp i AIC su najmanji pri <strong>423</strong> kolone, isto koliko bira i unakrsna validacija. <strong>BIC je najmanji pri
 145</strong> kolona, dakle skoro tri puta manjem modelu. Prilagođeni R² je najveći pri <strong>517</strong> kolona, dakle
 najvećem od tri izbora.</p>
 <p>Pri 423 kolone prilagođeni R² iznosi <strong>0,7085</strong>, a njegov najbolji je <strong>0,7092</strong> pri 517 — razlika je
 sedam desethiljaditih delova.</p>
-<p><strong>Tumačenje:</strong> razilaženje nije greška nego posledica toga što svako merilo drugačije kažnjava broj
+<p><strong>Tumačenje:</strong> Razilaženje nije greška nego posledica toga što svako merilo drugačije kažnjava broj
 kolona, i njihov poredak je upravo onaj koji se sa predavanja i očekuje.</p>
 <p><strong>BIC kažnjava najstrože</strong>, jer mu kazna raste sa <code>log(n)</code> po koloni, a kod nas je <code>log(14.608)</code> blizu
 deset — pa je svaka kolona pet puta skuplja nego kod AIC-a, gde je kazna 2. Zato BIC bira najmanji model.
@@ -11535,7 +11535,7 @@ da obrazložimo koje uzimamo; ovako obrazloženje ne treba.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Grafik-9-%E2%80%94-kako-se-%C4%8Detiri-merila-razilaze">Grafik 9 — kako se četiri merila razilaze<a class="anchor-link" href="#Grafik-9-%E2%80%94-kako-se-%C4%8Detiri-merila-razilaze">¶</a></h3><p><strong>Motivacija:</strong> iz tabele se vidi koji broj kolona svako merilo bira, ali ne i <strong>koliko je taj izbor
+<h3 id="Grafik-9-%E2%80%94-kako-se-%C4%8Detiri-merila-razilaze">Grafik 9 — kako se četiri merila razilaze<a class="anchor-link" href="#Grafik-9-%E2%80%94-kako-se-%C4%8Detiri-merila-razilaze">¶</a></h3><p><strong>Motivacija:</strong> Iz tabele se vidi koji broj kolona svako merilo bira, ali ne i <strong>koliko je taj izbor
 izražen</strong> — da li je minimum oštar ili je kriva skoro ravna, pa je izbor slučajan. Uz to su četiri merila
 u različitim jedinicama i ne mogu se crtati zajedno, pa svako svodimo na sopstveni opseg, od najgore
 vrednosti do najbolje. Tako se porede oblici, ne nivoi.</p>
@@ -11617,14 +11617,14 @@ vrednosti do najbolje. Tako se porede oblici, ne nivoi.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> četiri krive imaju <strong>različit oblik</strong>, i to je ono što se iz tabele nije videlo.</p>
+<p><strong>Zapažanje:</strong> Četiri krive imaju <strong>različit oblik</strong>, i to je ono što se iz tabele nije videlo.</p>
 <p>Cp, AIC i unakrsni R² dostižu najbolju vrednost pri 423 kolone i oko nje su <strong>ravni</strong> — dodavanje ili
 uklanjanje stotinak kolona menja ih malo. BIC ima <strong>oštar</strong> vrh pri 145 kolona i zatim jasno opada, jer
 mu kazna po koloni raste sa svakom dodatom. Prilagođeni R² raste skoro do kraja i ima najblaži oblik.</p>
 <p>Ispis pod grafikom pokazuje šta se gubi ako se uzme izbor unakrsne validacije: kod Cp, AIC i unakrsnog
 R² ništa, jer je 423 i njihov najbolji; kod prilagođenog R² <strong>0,0007</strong>; kod BIC-a razlika je velika
 (<strong>−38.426,8</strong> naspram <strong>−39.925,2</strong>).</p>
-<p><strong>Tumačenje:</strong> oblik krivih odlučuje koliko je izbor ozbiljan. Kod Cp i AIC-a minimum je plitak, pa se
+<p><strong>Tumačenje:</strong> Oblik krivih odlučuje koliko je izbor ozbiljan. Kod Cp i AIC-a minimum je plitak, pa se
 tvrdnja „najbolje je tačno 423 kolone" ne bi mogla braniti — tačnije je da je između tri i pet stotina
 kolona sve podjednako dobro. Kod BIC-a je vrh oštar, pa je njegova preporuka jasna, samo se ne tiče
 predviđanja nego jednostavnosti.</p>
@@ -11762,7 +11762,7 @@ izabrani model naspram medijane treninga:  +0.7066
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> poredak modela na test skupu je <strong>isti</strong> kao po unakrsnoj validaciji, i to je prva stvar
+<p><strong>Zapažanje:</strong> Poredak modela na test skupu je <strong>isti</strong> kao po unakrsnoj validaciji, i to je prva stvar
 koju treba primetiti.</p>
 <table>
 <thead>
@@ -11816,7 +11816,7 @@ koju treba primetiti.</p>
 a kod <strong>87,6%</strong> ispitanika predviđanje je u okviru dvostruko i kod <strong>51,6%</strong> u okviru četvrtine.</p>
 <p>Svi modeli su na testu <strong>neznatno slabiji</strong> nego po unakrsnoj validaciji, i to sistematski: razlika ide
 od −0,0015 kod medijane do −0,0125 kod Lassa.</p>
-<p><strong>Tumačenje:</strong> iz tabele slede dve stvari.</p>
+<p><strong>Tumačenje:</strong> Iz tabele slede dve stvari.</p>
 <p><strong>Unakrsna validacija je radila.</strong> Da nije, poredak bi se na testu promešao — a nije, čak ni između
 Ridge-a i Lassa, koje deli manje od pet hiljaditih delova. To znači da su svi izbori napravljeni u
 sekcijama 4 do 6 bili izbori na osnovu podataka, a ne slučajni.</p>
@@ -11867,7 +11867,7 @@ standardnom devijacijom kolone i dobijamo promenu <strong>po jedinici same kolon
 između „ima to obeležje" i osnovne kategorije, za brojčanu kolonu jedna godina staža ili jedan alat.</p>
 <p><strong>Drugi prevod: iz logaritma u procente.</strong> Ciljna promenljiva je dekadni logaritam, pa koeficijent <code>b</code>
 znači da se plata množi sa <code>10^b</code>. Promena u procentima je <code>(10^b − 1) × 100</code>.</p>
-<p><strong>Ograda:</strong> u sekciji 3 smo izmerili da rasipanje ostatka nije ujednačeno i da ostatak nije normalan, pa
+<p><strong>Ograda:</strong> U sekciji 3 smo izmerili da rasipanje ostatka nije ujednačeno i da ostatak nije normalan, pa
 <strong>p-vrednosti i intervali poverenja za ove koeficijente nisu pouzdani.</strong> Zato ih čitamo kao veličine, a ne
 kao rezultate testova, i uz svaki navodimo <strong>na koliko se ispitanika oslanja</strong> — jer koeficijent
 procenjen na nekoliko ljudi nije isto što i koeficijent procenjen na hiljadama.</p>
@@ -11976,7 +11976,7 @@ koeficijenata koji se oslanjaju na manje od 50 ispitanika: 63 od 423
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> najjači koeficijenti su gotovo isključivo <strong>zemlje i valute</strong>, i to je očekivano posle
+<p><strong>Zapažanje:</strong> Najjači koeficijenti su gotovo isključivo <strong>zemlje i valute</strong>, i to je očekivano posle
 sekcije 2, gde su ta dva obeležja bila daleko iznad svih ostalih — 0,5429 i 0,4821, naspram 0,1829
 kod trećeg po jačini.</p>
 <p>Na strani viših plata: <strong>Sjedinjene Države +122,0%</strong> (na 3.205 ispitanika), <strong>Izrael +90,2%</strong> (108),
@@ -11989,7 +11989,7 @@ veličini firme <strong>+4,89%</strong>, jedan poen zadovoljstva poslom <strong>
 <p>Ali dva najjača koeficijenta u celoj tabeli oslanjaju se na <strong>po dva ispitanika</strong>: <code>DevType_Retired</code>
 (+135,2%) i makaoska pataka (+73,1%). Ukupno <strong>63 od 423</strong> koeficijenta procenjeno je na manje od
 pedeset ljudi.</p>
-<p><strong>Tumačenje:</strong> tabela se čita na dva nivoa i lako je pogrešiti.</p>
+<p><strong>Tumačenje:</strong> Tabela se čita na dva nivoa i lako je pogrešiti.</p>
 <p><strong>Ono što je pouzdano</strong> su koeficijenti sa velikim brojem ispitanika. Sjedinjene Države sa 3.205
 ispitanika i Kanada sa 577 daju procene na koje se može osloniti, i one kažu ono što je i očekivano:
 tržište rada objašnjava najveći deo razlike u plati.</p>
@@ -12012,7 +12012,7 @@ prirodnu jedinicu. Godina staža koja donosi <strong>1,13%</strong> je broj koji
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Grafik-10-%E2%80%94-najja%C4%8Di-koeficijenti-i-koliko-ih-ljudi-podupire">Grafik 10 — najjači koeficijenti i koliko ih ljudi podupire<a class="anchor-link" href="#Grafik-10-%E2%80%94-najja%C4%8Di-koeficijenti-i-koliko-ih-ljudi-podupire">¶</a></h3><p><strong>Motivacija:</strong> tabela iz 8.1 daje veličine, ali se iz nje ne vidi odnos između <strong>jačine</strong> koeficijenta i
+<h3 id="Grafik-10-%E2%80%94-najja%C4%8Di-koeficijenti-i-koliko-ih-ljudi-podupire">Grafik 10 — najjači koeficijenti i koliko ih ljudi podupire<a class="anchor-link" href="#Grafik-10-%E2%80%94-najja%C4%8Di-koeficijenti-i-koliko-ih-ljudi-podupire">¶</a></h3><p><strong>Motivacija:</strong> Tabela iz 8.1 daje veličine, ali se iz nje ne vidi odnos između <strong>jačine</strong> koeficijenta i
 <strong>broja ispitanika</strong> na kojima je procenjen — a to je ono što odlučuje da li se koeficijentu može
 verovati. Crtamo dvadeset najjačih, sa dužinom trake za promenu u procentima i brojem ispitanika ispisanim
 uz svaku, pa se dva podatka čitaju odjednom.</p>
@@ -12103,13 +12103,13 @@ Country_Viet Nam                            -88.6%          33
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> grafik pokazuje ono što se iz tabele nije videlo — <strong>nema veze između jačine koeficijenta
+<p><strong>Zapažanje:</strong> Grafik pokazuje ono što se iz tabele nije videlo — <strong>nema veze između jačine koeficijenta
 i broja ispitanika na kojima je procenjen.</strong> Najduže trake na oba kraja pripadaju kolonama sa dvocifrenim
 ili jednocifrenim brojem ljudi, dok Sjedinjene Države sa <strong>3.205</strong> ispitanika stoje tek na trećem mestu
 po jačini.</p>
 <p>Uz to se vidi da je raspored po smeru <strong>nesimetričan</strong>: negativne trake idu do <strong>−88,6%</strong>, pozitivne do
 <strong>+135,2%</strong>, ali su negativne gušće u opsegu preko šezdeset posto.</p>
-<p><strong>Tumačenje:</strong> nesimetričnost ima jednostavno objašnjenje. Osnovna kategorija za zemlju i valutu je ona
+<p><strong>Tumačenje:</strong> Nesimetričnost ima jednostavno objašnjenje. Osnovna kategorija za zemlju i valutu je ona
 koja je alfabetski prva, a ne prosečna, pa se koeficijenti mere od nje — i pošto je većina ispitanika u
 skupu iz zemalja sa visokim platama, više je zemalja koje su ispod te osnovice nego iznad.</p>
 <p>Praktično, grafik je opomena za tumačenje koje sledi: <strong>koeficijenti se ne smeju rangirati samo po
@@ -12229,13 +12229,13 @@ u šest srednjih decila greška se kreće od -0.070 do +0.004
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> greška nije ista u svim decilima. U najnižem, sa medijanom plate <strong>9.299</strong> dolara, prosečna
+<p><strong>Zapažanje:</strong> Greška nije ista u svim decilima. U najnižem, sa medijanom plate <strong>9.299</strong> dolara, prosečna
 greška je <strong>+0,331</strong> u logaritmu — model predviđa <strong>2,14 puta</strong> više nego što ispitanik zarađuje. U
 najvišem, sa medijanom <strong>216.000</strong>, greška je <strong>−0,158</strong>, dakle <strong>0,70 puta</strong> stvarnog iznosa. U šest
 srednjih decila kreće se od <strong>−0,070 do +0,004</strong>, praktično nula.</p>
 <p>Tipičan promašaj prati isti oblik: <strong>80,2%</strong> u najnižem decilu, <strong>26,5%</strong> u najvišem, a najmanji je
 <strong>17,7%</strong> u decilu sa medijanom 88.171 dolara.</p>
-<p><strong>Tumačenje:</strong> predznak greške menja se <strong>jednom</strong> duž raspona — pozitivan na dnu, negativan na vrhu — i
+<p><strong>Tumačenje:</strong> Predznak greške menja se <strong>jednom</strong> duž raspona — pozitivan na dnu, negativan na vrhu — i
 to je obrazac <strong>vraćanja ka sredini</strong>. Regresija predviđa uslovnu srednju vrednost, pa kod ispitanika
 daleko od nje predviđanje vuče ka centru. Da model greši slučajno, znaci bi se mešali po decilima.</p>
 <p>Grafik ispod pokazuje isti nalaz u dva oblika, jer se iz brojeva ne vidi da li je prelaz sa precenjivanja
@@ -12250,7 +12250,7 @@ na potcenjivanje gladak ili skokovit.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Grafik-11-%E2%80%94-gre%C5%A1ka-po-nivou-plate">Grafik 11 — greška po nivou plate<a class="anchor-link" href="#Grafik-11-%E2%80%94-gre%C5%A1ka-po-nivou-plate">¶</a></h3><p><strong>Motivacija:</strong> brojevi iz tabele pokazuju da greška nije ista u svim decilima, ali se iz njih ne vidi
+<h3 id="Grafik-11-%E2%80%94-gre%C5%A1ka-po-nivou-plate">Grafik 11 — greška po nivou plate<a class="anchor-link" href="#Grafik-11-%E2%80%94-gre%C5%A1ka-po-nivou-plate">¶</a></h3><p><strong>Motivacija:</strong> Brojevi iz tabele pokazuju da greška nije ista u svim decilima, ali se iz njih ne vidi
 <strong>da li je obrazac pravilan</strong>. Ako model podjednako promašuje na oba kraja a tačan je u sredini, to je
 poznat obrazac vraćanja ka sredini i ima jedno objašnjenje; ako greši samo na jednom kraju, objašnjenje je
 drugo. Crtamo prosečnu grešku po decilu, sa nulom kao referencom.</p>
@@ -12331,13 +12331,13 @@ ispitanika sa platom ispod 1.000 USD u testu: 17
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> prelaz je <strong>gladak</strong>, ne skokovit. Leva slika pokazuje jedan visok pozitivan stubić na dnu,
+<p><strong>Zapažanje:</strong> Prelaz je <strong>gladak</strong>, ne skokovit. Leva slika pokazuje jedan visok pozitivan stubić na dnu,
 zatim niz sve negativnijih, bez ijednog vraćanja u drugu stranu. Desna pokazuje da tipičan promašaj ima
 oblik slova U: pada sa <strong>80,2%</strong> na <strong>17,7%</strong> oko medijane od 88.171 dolara, pa raste na <strong>26,5%</strong> kod
 najviših plata.</p>
 <p>Sedamnaest ispitanika u testu ima platu ispod hiljadu dolara, i njihov tipičan promašaj je <strong>1.199%</strong>,
 naspram <strong>23,7%</strong> kod svih ostalih.</p>
-<p><strong>Tumačenje:</strong> oblik slova U znači da model najbolje radi tamo gde ima najviše podataka, a slabije na oba
+<p><strong>Tumačenje:</strong> Oblik slova U znači da model najbolje radi tamo gde ima najviše podataka, a slabije na oba
 kraja — što je i očekivano, ali je desni krak mnogo blaži od levog.</p>
 <p>Promašaj od 1.199% kod sedamnaest ljudi pokazuje da za njih model nema nikakvu upotrebu. To je isti nalaz
 koji smo u 1.2 postavili kao očekivanje a u 3.2 i 3.4 videli u obliku obrnute lepeze i netipičnih
@@ -12443,13 +12443,13 @@ tipičan promašaj: od 14.0% (Austria) do 71.9% (Ukraine)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> dvadeset zemalja ima najmanje četrdeset ispitanika u testu i one nose <strong>2.887 od 3.652</strong>
+<p><strong>Zapažanje:</strong> Dvadeset zemalja ima najmanje četrdeset ispitanika u testu i one nose <strong>2.887 od 3.652</strong>
 ispitanika.</p>
 <p><strong>Prosečna greška je po zemljama mala.</strong> Raspon ide od <strong>−0,085</strong> kod Ukrajine do <strong>+0,107</strong> kod
 Rumunije, dakle od <strong>0,82</strong> do <strong>1,28 puta</strong>. Model, dakle, ni za jednu zemlju sistematski ne promašuje
 više od tridesetak posto u prosečnom smeru.</p>
 <p><strong>Tipičan promašaj se razlikuje mnogo više</strong> — od <strong>14,0%</strong> u Austriji do <strong>71,9%</strong> u Ukrajini.</p>
-<p><strong>Tumačenje:</strong> razlika između tih dveju mera je ono što treba pročitati.</p>
+<p><strong>Tumačenje:</strong> Razlika između tih dveju mera je ono što treba pročitati.</p>
 <p>Mala prosečna greška znači da model <strong>nije pristrasan po zemljama</strong>: ne postoji zemlja za koju
 sistematski predviđa previsoko ili prenisko. To je i očekivano, jer zemlja u modelu ima svoju kolonu, pa
 model za svaku uči sopstveni nivo.</p>
@@ -12617,10 +12617,10 @@ Lasso                   0.6845   0.6720          23.8348           87.6232
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> oba fajla su zapisana i pročitana nazad. Predviđanja imaju <strong>3.652 reda i 7 kolona</strong>,
+<p><strong>Zapažanje:</strong> Oba fajla su zapisana i pročitana nazad. Predviđanja imaju <strong>3.652 reda i 7 kolona</strong>,
 koeficijenti <strong>423 reda i 4 kolone</strong>, a test R² ponovo izračunat iz fajla iznosi <strong>0,6720</strong> — isto kao
 pre čuvanja.</p>
-<p><strong>Tumačenje:</strong> provera čitanjem je ista ona koju smo radili u prethodnom notebook-u i ima isti razlog:
+<p><strong>Tumačenje:</strong> Provera čitanjem je ista ona koju smo radili u prethodnom notebook-u i ima isti razlog:
 zapis u CSV i čitanje nazad mogu da promene tip kolone. Pošto se test R² iz fajla poklapa sa onim iz
 sekcije 7, fajl sadrži ono što mislimo da sadrži.</p>
 <p>Konačna tabela na kraju ispisa sabira ceo notebook — svih šest modela, unakrsni i test rezultat

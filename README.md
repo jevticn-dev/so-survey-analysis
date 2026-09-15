@@ -53,7 +53,7 @@ Svaka odluka o podacima proverena je merenjem, a nalazi su zapisani u samim note
 
 Notebook-i su rađeni **jedan za drugim, u gornjem redosledu**, i svaki je zaokružena celina koja se čita sama za sebe. Spajanje u jedan dokument urađeno je **na kraju**, kada je sve ostalo bilo gotovo.
 
-Ako je za čitanje zgodnije imati sve na jednom mestu, tu je **`report/final_report.ipynb`** — svih pet koraka u jednom dokumentu, sa neprekidnom numeracijom kroz ceo rad: **43 sekcije i 37 grafika**. Sadržaj analize je isti kao u zasebnim notebook-ovima. Spajanjem su menjani brojevi sekcija i grafika i pozivanja na njih, formulacije koje su govorile o zasebnim notebook-ima („u prethodnom notebook-u" umesto „u prethodnom delu"), i dodata je naslovna celina na početku.
+Ako je za čitanje zgodnije imati sve na jednom mestu, tu je **`report/final_report.ipynb`** — svih pet koraka u jednom dokumentu, sa neprekidnom numeracijom kroz ceo rad: **43 sekcije i 38 grafika**. Sadržaj analize je isti kao u zasebnim notebook-ovima. Spajanjem su menjani brojevi sekcija i grafika i pozivanja na njih, formulacije koje su govorile o zasebnim notebook-ima („u prethodnom notebook-u" umesto „u prethodnom delu"), i dodata je naslovna celina na početku.
 
 **Napomena:** notebook-i su veliki i pozivanja između sekcija su brojna, pa je moguće da je pri tom preslikavanju numeracije neka referenca nenamerno ostala pogrešna. Ako se negde ne poklapa, merodavni su zasebni notebook-i u `notebooks/`, gde je numeracija ona u kojoj je rad i pisan.
 

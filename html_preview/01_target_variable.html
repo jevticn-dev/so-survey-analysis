@@ -8041,7 +8041,7 @@ koeficijent asimetrije, log vrednost:      -2.58
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Grafik-1-%E2%80%94-raspodela-kompenzacije,-bez-ikakvih-izmena">Grafik 1 — raspodela kompenzacije, bez ikakvih izmena<a class="anchor-link" href="#Grafik-1-%E2%80%94-raspodela-kompenzacije,-bez-ikakvih-izmena">¶</a></h3><p><strong>Motivacija:</strong> prvo hoćemo prosto da vidimo kako izgleda raspodela ciljne promenljive u dolarima,
+<h3 id="Grafik-1-%E2%80%94-raspodela-kompenzacije,-bez-ikakvih-izmena">Grafik 1 — raspodela kompenzacije, bez ikakvih izmena<a class="anchor-link" href="#Grafik-1-%E2%80%94-raspodela-kompenzacije,-bez-ikakvih-izmena">¶</a></h3><p><strong>Motivacija:</strong> Prvo hoćemo prosto da vidimo kako izgleda raspodela ciljne promenljive u dolarima,
 bez transformacija i bez podešavanja prikaza.</p>
 </div>
 </div>
@@ -8086,16 +8086,16 @@ bez transformacija i bez podešavanja prikaza.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> grafik je praktično prazan. Vidi se jedan jedini stubić uz levu ivicu, dok se X-osa
+<p><strong>Zapažanje:</strong> Grafik je praktično prazan. Vidi se jedan jedini stubić uz levu ivicu, dok se X-osa
 proteže sve do 50 miliona dolara. Ostali stubići postoje, ali su toliko niski da se ne razlikuju od
 nule.</p>
-<p><strong>Tumačenje:</strong> ovo nije greška u crtanju nego osobina podataka. Skoro svi ispitanici su zbijeni u
+<p><strong>Tumačenje:</strong> Ovo nije greška u crtanju nego osobina podataka. Skoro svi ispitanici su zbijeni u
 uskom pojasu na dnu skale, a nekolicina razvlači osu preko celog grafika. Iz ovakve slike ne možemo
 pročitati ništa o obliku raspodele.</p>
 <p>Prvi pokušaj da to popravimo je najblaži mogući: <strong>ne diramo podatke, menjamo samo prikaz.</strong>
 Logaritamska Y-osa čini vidljivim i stubiće sa po nekoliko ispitanika, pored onih sa desetinama
 hiljada.</p>
-<h3 id="Grafik-2-%E2%80%94-ista-raspodela,-sa-logaritamskom-Y-osom">Grafik 2 — ista raspodela, sa logaritamskom Y-osom<a class="anchor-link" href="#Grafik-2-%E2%80%94-ista-raspodela,-sa-logaritamskom-Y-osom">¶</a></h3><p><strong>Motivacija:</strong> hoćemo da vidimo šta se nalazi izvan onog prvog stubića — dokle se raspodela zapravo
+<h3 id="Grafik-2-%E2%80%94-ista-raspodela,-sa-logaritamskom-Y-osom">Grafik 2 — ista raspodela, sa logaritamskom Y-osom<a class="anchor-link" href="#Grafik-2-%E2%80%94-ista-raspodela,-sa-logaritamskom-Y-osom">¶</a></h3><p><strong>Motivacija:</strong> Hoćemo da vidimo šta se nalazi izvan onog prvog stubića — dokle se raspodela zapravo
 proteže i kako opada.</p>
 </div>
 </div>
@@ -8156,12 +8156,12 @@ stubića sa bar jednim redom:          16 od 80
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> sada se vidi da raspodela nije prazna nego izuzetno neravnomerna. Uz levu ivicu stoji
+<p><strong>Zapažanje:</strong> Sada se vidi da raspodela nije prazna nego izuzetno neravnomerna. Uz levu ivicu stoji
 jedan ogroman stubić, a zatim se preko cele ose, sve do 50 miliona dolara, proteže vrlo redak rep od
 svega nekoliko stubića sa po nekoliko ljudi.</p>
 <p>Ispis ispod grafika daje tačne brojke: širina jednog stubića je <strong>625.000 dolara</strong>, u prvi stubić
 pada <strong>23.816 ispitanika, odnosno 99,5%</strong> njih, a od 80 stubića samo <strong>16</strong> uopšte sadrži nekoga.</p>
-<p><strong>Tumačenje:</strong> promena prikaza nam je pomogla da podatke vidimo, ali problem nije rešila — samo ga je
+<p><strong>Tumačenje:</strong> Promena prikaza nam je pomogla da podatke vidimo, ali problem nije rešila — samo ga je
 jasno pokazala. Rep je stvaran i vrlo dugačak, pa bi u regresiji nekoliko takvih ispitanika imalo
 veću težinu od svih ostalih zajedno.</p>
 <p>Opisna statistika iz ranije ćelije to potvrđuje: sredina je <strong>101.792</strong> a medijana <strong>75.384 dolara</strong> —
@@ -8169,7 +8169,7 @@ kod simetrične raspodele te dve vrednosti se poklapaju. Najveća vrednost je <s
 medijane</strong>, a standardna devijacija (<strong>461.934</strong>) preko četiri puta veća od same sredine. Isto sažeto
 govori i koeficijent asimetrije od <strong>75,47</strong>, koji za simetričnu raspodelu iznosi nulu.</p>
 <p>Pošto podešavanje prikaza nije dovoljno, sledeći korak je da promenimo <strong>samu promenljivu</strong>.</p>
-<h3 id="Grafik-3-%E2%80%94-posle-logaritamske-transformacije">Grafik 3 — posle logaritamske transformacije<a class="anchor-link" href="#Grafik-3-%E2%80%94-posle-logaritamske-transformacije">¶</a></h3><p><strong>Motivacija:</strong> hoćemo da vidimo da li transformisana promenljiva ima oblik pogodan za regresiju.
+<h3 id="Grafik-3-%E2%80%94-posle-logaritamske-transformacije">Grafik 3 — posle logaritamske transformacije<a class="anchor-link" href="#Grafik-3-%E2%80%94-posle-logaritamske-transformacije">¶</a></h3><p><strong>Motivacija:</strong> Hoćemo da vidimo da li transformisana promenljiva ima oblik pogodan za regresiju.
 Razlog da baš logaritam probamo je merna skala: razlika od 10.000 dolara znači nešto sasvim drugo kod
 plate od 20.000 nego kod plate od 500.000. Logaritam relativne razlike pretvara u apsolutne, pa je
 udvostručenje plate isti pomak i na dnu i na vrhu skale.</p>
@@ -8230,11 +8230,11 @@ ispitanika u njemu: 3,081
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> raspodela je sada zvonasta i čitljiva na običnoj Y-osi. Ispis ispod grafika kaže da je
+<p><strong>Zapažanje:</strong> Raspodela je sada zvonasta i čitljiva na običnoj Y-osi. Ispis ispod grafika kaže da je
 najviši stubić u logaritamskom opsegu <strong>4,91–5,00</strong>, što odgovara kompenzaciji između <strong>80.927 i
 101.002 dolara</strong>, i da se u njemu nalazi <strong>3.081 ispitanik</strong>. Levo se, međutim, izdvaja izdužen rep
 koji se spušta sve do nule.</p>
-<p><strong>Tumačenje:</strong> transformacija je uspela u onome zbog čega je i probana. Desni rep je nestao,
+<p><strong>Tumačenje:</strong> Transformacija je uspela u onome zbog čega je i probana. Desni rep je nestao,
 raspodela ima upotrebljiv oblik, i ciljnu promenljivu ćemo modelovati u logaritamskom obliku.</p>
 <p>Otkrila je, međutim, drugi problem. Koeficijent asimetrije je posle transformacije <strong>−2,58</strong>, dakle
 rep je sada na levoj strani. Uzrok su neuverljivo male prijavljene vrednosti: prvi procenat
@@ -8260,7 +8260,7 @@ ostavljamo za fazu modelovanja.</p>
 <p><strong>Hipoteza:</strong> <code>ConvertedCompYearly</code> je nastao isključivo množenjem <code>CompTotal</code>-a fiksnim kursom
 valute ispitanika. Formalno: količnik <code>ConvertedCompYearly / CompTotal</code> je konstantan unutar svake
 vrednosti kolone <code>Currency</code>.</p>
-<p><strong>Kriterijum, postavljen unapred:</strong> hipoteza je potvrđena ako u <strong>svakoj</strong> valuti bar <strong>99% redova</strong>
+<p><strong>Kriterijum, postavljen unapred:</strong> Hipoteza je potvrđena ako u <strong>svakoj</strong> valuti bar <strong>99% redova</strong>
 odstupa manje od <strong>1%</strong> od medijane količnika za tu valutu. Prag nije nula zbog očekivanog
 zaokruživanja na cele dolare.</p>
 </blockquote>
@@ -8516,7 +8516,7 @@ kontrola da račun radi ispravno.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Grafik-4-%E2%80%94-sva-odstupanja,-ceo-opseg">Grafik 4 — sva odstupanja, ceo opseg<a class="anchor-link" href="#Grafik-4-%E2%80%94-sva-odstupanja,-ceo-opseg">¶</a></h3><p><strong>Motivacija:</strong> hoćemo da vidimo koliko su velika odstupanja implicitnog kursa od medijane za
+<h3 id="Grafik-4-%E2%80%94-sva-odstupanja,-ceo-opseg">Grafik 4 — sva odstupanja, ceo opseg<a class="anchor-link" href="#Grafik-4-%E2%80%94-sva-odstupanja,-ceo-opseg">¶</a></h3><p><strong>Motivacija:</strong> Hoćemo da vidimo koliko su velika odstupanja implicitnog kursa od medijane za
 sopstvenu valutu i dokle se uopšte protežu. Y-osu odmah postavljamo na logaritamsku, pošto smo u
 prethodnoj sekciji videli šta se dešava kad se to ne uradi kod raspodele sa dugačkim repom.</p>
 </div>
@@ -8563,9 +8563,9 @@ prethodnoj sekciji videli šta se dešava kad se to ne uradi kod raspodele sa du
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> gotovo svi ispitanici su u prvom stubiću, uz nulu. Ostatak je vrlo redak, a osa se
+<p><strong>Zapažanje:</strong> Gotovo svi ispitanici su u prvom stubiću, uz nulu. Ostatak je vrlo redak, a osa se
 završava na oko 91% — dalje od toga nema nijednog ispitanika.</p>
-<p><strong>Tumačenje:</strong> iz toga dokle se osa proteže sledi jedan zaključak koji vredi izvući. U ranijim
+<p><strong>Tumačenje:</strong> Iz toga dokle se osa proteže sledi jedan zaključak koji vredi izvući. U ranijim
 godinama ankete postojala je kolona <code>CompFreq</code>, koja je beležila periodiku prijavljenog iznosa, pa je
 Stack Overflow deo odgovora sam svodio na godišnji nivo.</p>
 <p>Da je isto radio i ovde, videlo bi se, i vredi proći kroz jedan primer. Neka je ispitanik u
@@ -8632,7 +8632,7 @@ najveće odstupanje u celom skupu:              91.2%
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Nalaz:</strong> u okolini faktora dvanaest nema nijednog reda, a najveći zabeleženi količnik prema medijani
+<p><strong>Nalaz:</strong> U okolini faktora dvanaest nema nijednog reda, a najveći zabeleženi količnik prema medijani
 je 1,91. <strong>Stack Overflow, dakle, nije primenio nikakvu transformaciju osim konverzije valute.</strong></p>
 <p>Vredi naglasiti šta ovo <em>ne</em> znači. Provera ne može da otkrije ispitanika koji je <strong>sam</strong> pogrešio i
 uneo mesečnu platu umesto godišnje.</p>
@@ -8643,7 +8643,7 @@ upiše 5.000 umesto 60.000, a <code>ConvertedCompYearly</code> se <strong>iz tog
 kod svih ispravnih redova. Greška se u količniku skrati i red izgleda potpuno uredno.</p>
 <p>Ovde, dakle, tražimo transformaciju koju je uveo Stack Overflow, ne grešku ispitanika — ta druga je
 zaseban problem i rešava se u fazi čišćenja outliera.</p>
-<h3 id="Grafik-5-%E2%80%94-uve%C4%87an-prikaz-malih-odstupanja">Grafik 5 — uvećan prikaz malih odstupanja<a class="anchor-link" href="#Grafik-5-%E2%80%94-uve%C4%87an-prikaz-malih-odstupanja">¶</a></h3><p><strong>Motivacija:</strong> ostaje da vidimo kako izgledaju ona odstupanja koja jesu tu, u pojasu od nekoliko
+<h3 id="Grafik-5-%E2%80%94-uve%C4%87an-prikaz-malih-odstupanja">Grafik 5 — uvećan prikaz malih odstupanja<a class="anchor-link" href="#Grafik-5-%E2%80%94-uve%C4%87an-prikaz-malih-odstupanja">¶</a></h3><p><strong>Motivacija:</strong> Ostaje da vidimo kako izgledaju ona odstupanja koja jesu tu, u pojasu od nekoliko
 procenata oko nule. Na prethodnom grafiku se taj pojas svodio na jedan stubić, pa sve preko 3%
 sabijamo u poslednji stubić da bismo ga videli izbliza.</p>
 </div>
@@ -8695,10 +8695,10 @@ sabijamo u poslednji stubić da bismo ga videli izbliza.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> odstupanja opadaju glatko i neprekidno, bez ijedne izdvojene grupe. Prag od 1%, koji
+<p><strong>Zapažanje:</strong> Odstupanja opadaju glatko i neprekidno, bez ijedne izdvojene grupe. Prag od 1%, koji
 smo postavili unapred, seče taj niz na proizvoljnom mestu — na samoj toj vrednosti se u podacima ne
 dešava ništa posebno.</p>
-<p><strong>Tumačenje:</strong> takav oblik odgovara veličini koja se menja neprekidno, dakle kursu koji se pomerao
+<p><strong>Tumačenje:</strong> Takav oblik odgovara veličini koja se menja neprekidno, dakle kursu koji se pomerao
 tokom trajanja ankete. Da je posredi bila neka sistematska intervencija nad delom podataka,
 očekivali bismo zgusnuće na određenoj vrednosti, a ne ravnomerno proređivanje.</p>
 </div>
@@ -8711,7 +8711,7 @@ očekivali bismo zgusnuće na određenoj vrednosti, a ne ravnomerno proređivanj
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Grafik-6-%E2%80%94-da-li-kriterijum-prolazi-u-svakoj-valuti">Grafik 6 — da li kriterijum prolazi u svakoj valuti<a class="anchor-link" href="#Grafik-6-%E2%80%94-da-li-kriterijum-prolazi-u-svakoj-valuti">¶</a></h3><p><strong>Motivacija:</strong> kriterijum smo postavili po valuti, a ne na celom skupu, pa ga tako treba i
+<h3 id="Grafik-6-%E2%80%94-da-li-kriterijum-prolazi-u-svakoj-valuti">Grafik 6 — da li kriterijum prolazi u svakoj valuti<a class="anchor-link" href="#Grafik-6-%E2%80%94-da-li-kriterijum-prolazi-u-svakoj-valuti">¶</a></h3><p><strong>Motivacija:</strong> Kriterijum smo postavili po valuti, a ne na celom skupu, pa ga tako treba i
 proveriti — ukupan procenat od 99,47% bi sakrio valute sa malo ispitanika. Gledamo dvadeset valuta
 sa najviše ispitanika.</p>
 </div>
@@ -8815,10 +8815,10 @@ KRW\tSouth Korean won        37       94.59
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Zapažanje:</strong> kod većine prikazanih valuta udeo je preko 99%, kod dolara tačno 100%, a kod jednog
+<p><strong>Zapažanje:</strong> Kod većine prikazanih valuta udeo je preko 99%, kod dolara tačno 100%, a kod jednog
 dela valuta pada ispod praga. Ispis iznad pokazuje da je takvih <strong>24 od 124 valute</strong>, i da one
 zajedno nose svega <strong>1.368 od 23.928 ispitanika</strong>.</p>
-<p><strong>Tumačenje:</strong> te valute nisu nasumičan skup. Najvećim delom su to valute tržišta u razvoju, čiji je
+<p><strong>Tumačenje:</strong> Te valute nisu nasumičan skup. Najvećim delom su to valute tržišta u razvoju, čiji je
 kurs tokom perioda ankete izraženije oscilovao — kolumbijski pezo, nigerijska naira, argentinski
 pezo, turska lira, vijetnamski dong. Među njima ima i stabilnijih valuta, poput japanskog jena i
 bugarskog leva, gde je odstupanje manje ali i dalje iznad praga. Obrazac, dakle, prati kretanje
