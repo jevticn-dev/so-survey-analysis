@@ -1,90 +1,90 @@
-# Analiza Stack Overflow Developer Survey 2025
+# Stack Overflow Developer Survey 2025 Analysis
 
-Seminarski rad iz predmeta **Uvod u nauku o podacima** (Prirodno-matematički fakultet, Univerzitet u Kragujevcu).
+Course project for **Introduction to Data Science** (Faculty of Science, University of Kragujevac).
 
-## Opis projekta
+## Project description
 
-Projekat se bavi analizom podataka iz **Stack Overflow Developer Survey 2025** — godišnje ankete koju Stack Overflow sprovodi među programerima širom sveta. Anketa pokriva demografiju ispitanika, radno iskustvo, korišćene tehnologije, tip zaposlenja i obrazovanja, kao i podatke o kompenzaciji.
+The project analyzes data from the **Stack Overflow Developer Survey 2025**, the annual survey Stack Overflow runs among developers worldwide. The survey covers respondent demographics, work experience, technologies used, employment type and education, as well as compensation data.
 
-**Cilj rada** je izgradnja regresionog modela za predviđanje ukupne godišnje kompenzacije ispitanika na osnovu ostalih obeležja iz ankete. Ciljna promenljiva je `ConvertedCompYearly` — kompenzacija preračunata u dolare, jer prijavljeni iznos u ispitanikovoj valuti (`CompTotal`) nije uporediv između zemalja. Modeluje se njen dekadni logaritam, pošto je sirova raspodela krajnje iskošena.
+**The goal** is to build a regression model that predicts a respondent's total yearly compensation from the other survey attributes. The target variable is `ConvertedCompYearly`, compensation converted to US dollars, because the amount reported in the respondent's own currency (`CompTotal`) is not comparable across countries. Its base-10 logarithm is modeled, since the raw distribution is extremely skewed.
 
-Rad je išao u pet koraka, ovim redom:
+The work proceeded in five steps, in this order:
 
-1. **opis skupa** — izvor, struktura ankete, sastav uzorka, nedostajuće vrednosti i kandidati za ciljnu promenljivu,
-2. **izbor i provera ciljne promenljive** — u kakvom su odnosu dve kolone o kompenzaciji i koja je upotrebljiva,
-3. **čišćenje** — populacija, duplikati, strukturne greške, netipične vrednosti, nedostajuće vrednosti i podela na trening i test skup,
-4. **feature engineering** — izvođenje novih promenljivih iz kolona sa višestrukim odgovorima i iz rang-pitanja,
-5. **modelovanje** — linearna regresija sa dijagnostikom, Ridge, Lasso i regresija na glavne komponente, uz izbor modela i merenje na test skupu.
+1. **dataset overview**: source, survey structure, sample composition, missing values and candidates for the target variable,
+2. **choosing and validating the target variable**: how the two compensation columns relate and which one is usable,
+3. **cleaning**: population, duplicates, structural errors, outliers, missing values and the train/test split,
+4. **feature engineering**: deriving new variables from multiple-choice columns and ranking questions,
+5. **modeling**: linear regression with diagnostics, Ridge, Lasso and principal component regression, with model selection and evaluation on the test set.
 
-Podaci se preuzimaju sa Kaggle-a pomoću biblioteke `kagglehub` i ne čuvaju se u repozitorijumu.
+The data is downloaded from Kaggle with the `kagglehub` library and is not stored in the repository.
 
-## Rezultat
+## Result
 
-Izabrani model je **Lasso** (λ = 0,00155), koji od 707 kolona zadržava **423**. Na test skupu, koji ni u jednoj odluci nije korišćen:
+The selected model is **Lasso** (λ = 0.00155), which keeps **423** of 707 columns. On the test set, which was not used in any decision:
 
-| mera | vrednost |
+| metric | value |
 | --- | --- |
-| R² (na logaritmu plate) | **0,6720** |
-| tipičan promašaj | **23,8%**, odnosno **16.630 dolara** |
-| predviđanje u okviru dvostruko | kod **87,6%** ispitanika |
-| predviđanje u okviru četvrtine | kod **51,6%** ispitanika |
+| R² (on log salary) | **0.6720** |
+| typical error | **23.8%**, i.e. **$16,630** |
+| prediction within a factor of two | for **87.6%** of respondents |
+| prediction within 25% | for **51.6%** of respondents |
 
-Da bi se taj broj mogao pročitati, pre pravljenja ijednog modela izmerene su tri referentne tačke (unakrsnom validacijom nad trening skupom): predviđanje konstantom daje **−0,0001**, sama zemlja **0,5429**, a sva anketna obeležja bez ijedne izvedene promenljive **0,6668**. Promenljive izvedene u četvrtom koraku dodaju **+0,0101** preko te poslednje letvice — manje nego što je izgledalo na trening skupu.
+To give that number a frame of reference, three baselines were measured before any model was built (cross-validation on the training set): predicting a constant gives **−0.0001**, country alone **0.5429**, and all survey attributes without any derived variable **0.6668**. The variables derived in the fourth step add **+0.0101** over that last bar, which is less than they appeared to add on the training set.
 
-Poredak modela na test skupu poklopio se sa poretkom po unakrsnoj validaciji, što potvrđuje da izbori nisu pravljeni prema ishodu.
+The ranking of models on the test set matched the ranking from cross-validation, which confirms that choices were not made based on the outcome.
 
-Model **nije podjednako upotrebljiv na celom rasponu**: u srednjih osamdeset posto plata tipičan promašaj je između 17,7% i 32,2%, dok kod sedamnaest ispitanika sa prijavljenim iznosom ispod hiljadu dolara promašuje 1.199%.
+The model **is not equally usable across the whole range**: in the middle eighty percent of salaries the typical error is between 17.7% and 32.2%, while for the seventeen respondents who reported less than a thousand dollars it misses by 1,199%.
 
-## Tok rada
+## Workflow
 
-| Notebook | Šta radi | Rezultat |
+| Notebook | What it does | Result |
 | --- | --- | --- |
-| `00_dataset_overview.ipynb` | opisuje izvor, strukturu ankete, sastav uzorka, nedostajuće vrednosti i kandidate za ciljnu promenljivu | `column_overview.csv` — pregled svih 170 kolona |
-| `01_target_variable.ipynb` | bira ciljnu promenljivu i proverava kako je izvedena | `ConvertedCompYearly`, modeluje se logaritmovana |
-| `02_data_cleaning.ipynb` | populacija, duplikati, strukturne greške, netipične vrednosti, nedostajuće vrednosti, podela na trening i test | `train.csv.gz` i `test.csv.gz` — 18.260 ispitanika, 129 kolona |
-| `03_feature_engineering.ipynb` | izvodi promenljive iz multi-select kolona i rangiranja, sažima zemlju, proverava preklapanje | `train_features.csv.gz` i `test_features.csv.gz` — 429 kolona |
-| `04_modeling.ipynb` | linearna regresija sa dijagnostikom, Ridge, Lasso i regresija na glavne komponente, uz izbor modela i merenje na test skupu | `test_predictions.csv.gz` i `model_coefficients.csv` |
+| `00_dataset_overview.ipynb` | describes the source, survey structure, sample composition, missing values and candidates for the target variable | `column_overview.csv`: an overview of all 170 columns |
+| `01_target_variable.ipynb` | chooses the target variable and checks how it was derived | `ConvertedCompYearly`, modeled on a log scale |
+| `02_data_cleaning.ipynb` | population, duplicates, structural errors, outliers, missing values, train/test split | `train.csv.gz` and `test.csv.gz`: 18,260 respondents, 129 columns |
+| `03_feature_engineering.ipynb` | derives variables from multi-select columns and rankings, condenses country, checks for overlap | `train_features.csv.gz` and `test_features.csv.gz`: 429 columns |
+| `04_modeling.ipynb` | linear regression with diagnostics, Ridge, Lasso and principal component regression, with model selection and evaluation on the test set | `test_predictions.csv.gz` and `model_coefficients.csv` |
 
-Put kroz podatke: **49.123 ispitanika → 34.106 u populaciji → 19.461 sa prijavljenom platom → 18.260 posle uklanjanja netipičnih vrednosti.** Kolone: **170 → 129 posle čišćenja → 429 posle feature engineeringa**, odnosno 709 kolona modela posle enkodiranja.
+Path through the data: **49,123 respondents → 34,106 in the population → 19,461 with reported salary → 18,260 after removing outliers.** Columns: **170 → 129 after cleaning → 429 after feature engineering**, or 709 model columns after encoding.
 
-Svaka odluka o podacima proverena je merenjem, a nalazi su zapisani u samim notebook-ovima uz motivaciju, kod, rezultat izvršenja i tumačenje.
+Every decision about the data was checked by measurement, and the findings are recorded in the notebooks themselves, together with the motivation, code, output and interpretation.
 
-### Spojena verzija
+### Merged version
 
-Notebook-i su rađeni **jedan za drugim, u gornjem redosledu**, i svaki je zaokružena celina koja se čita sama za sebe. Spajanje u jedan dokument urađeno je **na kraju**, kada je sve ostalo bilo gotovo.
+The notebooks were written **one after another, in the order above**, and each is a self-contained unit that can be read on its own. They were merged into a single document **at the end**, when everything else was done.
 
-Ako je za čitanje zgodnije imati sve na jednom mestu, tu je **`report/final_report.ipynb`** — svih pet koraka u jednom dokumentu, sa neprekidnom numeracijom kroz ceo rad: **43 sekcije i 38 grafika**. Sadržaj analize je isti kao u zasebnim notebook-ovima. Spajanjem su menjani brojevi sekcija i grafika i pozivanja na njih, formulacije koje su govorile o zasebnim notebook-ima („u prethodnom notebook-u" umesto „u prethodnom delu"), i dodata je naslovna celina na početku.
+If it is more convenient to have everything in one place, there is **`report/final_report.ipynb`**: all five steps in one document, with continuous numbering throughout: **43 sections and 38 figures**. The analysis is the same as in the separate notebooks. The merge changed section and figure numbers and the references to them, changed wording that referred to separate notebooks ("in the previous part" instead of "in the previous notebook"), and added a title section at the beginning.
 
-**Napomena:** notebook-i su veliki i pozivanja između sekcija su brojna, pa je moguće da je pri tom preslikavanju numeracije neka referenca nenamerno ostala pogrešna. Ako se negde ne poklapa, merodavni su zasebni notebook-i u `notebooks/`, gde je numeracija ona u kojoj je rad i pisan.
+**Note:** the notebooks are large and cross-references between sections are numerous, so some reference may have unintentionally ended up wrong when the numbering was remapped. If something does not match, the separate notebooks in `notebooks/` are authoritative, since their numbering is the one the work was written in.
 
-## Izvezene HTML verzije
+## Exported HTML versions
 
-Folder `html_preview/` sadrži isti sadržaj izvezen u HTML — sa svim ispisima, tabelama i graficima — za čitanje u pregledaču, bez pokretanja Jupyter-a i bez instaliranja zavisnosti:
+The `html_preview/` folder contains the same content exported to HTML, with all outputs, tables and figures, for reading in a browser without running Jupyter or installing dependencies:
 
-| fajl | šta je |
+| file | what it is |
 | --- | --- |
-| `00_dataset_overview.html` | opis skupa podataka |
-| `01_target_variable.html` | ciljna promenljiva |
-| `02_data_cleaning.html` | čišćenje i priprema |
-| `03_feature_engineering.html` | izvođenje novih promenljivih |
-| `04_modeling.html` | modelovanje |
-| `final_report.html` | svih pet koraka u jednom dokumentu |
+| `00_dataset_overview.html` | dataset overview |
+| `01_target_variable.html` | target variable |
+| `02_data_cleaning.html` | cleaning and preparation |
+| `03_feature_engineering.html` | deriving new variables |
+| `04_modeling.html` | modeling |
+| `final_report.html` | all five steps in one document |
 
-## Struktura repozitorijuma
+## Repository structure
 
-| Folder | Sadržaj |
+| Folder | Contents |
 | --- | --- |
-| `sandbox/` | Inicijalno istraživanje dataseta — prva, zaokružena faza rada (osnovni pregled podataka, nedostajuće vrednosti, raspodela ciljne promenljive i prateći izveštaj). Zatvorena celina, ostaje kao trag o polaznoj analizi. |
-| `data/raw/` | Sirovi podaci, onako kako se preuzmu sa izvora. Sadržaj se ne verzioniše. |
-| `data/processed/` | Očišćen i pripremljen skup podataka, kao i predviđanja i koeficijenti izabranog modela. Verzionišu se, da se rezultati mogu proveriti bez ponovnog pokretanja. |
-| `notebooks/` | Radni Jupyter notebook-ovi, po jedan za svaki korak rada. |
-| `report/` | `final_report.ipynb` — svih pet koraka spojenih u jedan dokument, sa jedinstvenom numeracijom sekcija i grafika. |
-| `html_preview/` | Izvezene HTML verzije svih notebook-a i spojenog dokumenta, za čitanje bez Jupyter-a. |
-| `src/` | `data_loader.py` — preuzimanje i učitavanje sirovih podataka. Ostalo se radi u notebook-ovima, jer je svaki korak vezan za svoje objašnjenje. |
+| `sandbox/` | Initial exploration of the dataset: the first, self-contained phase of the work (basic data overview, missing values, target distribution and an accompanying report). A closed unit, kept as a record of the starting analysis. |
+| `data/raw/` | Raw data, as downloaded from the source. Contents are not versioned. |
+| `data/processed/` | The cleaned and prepared dataset, plus the predictions and coefficients of the selected model. Versioned, so the results can be checked without rerunning anything. |
+| `notebooks/` | Working Jupyter notebooks, one for each step of the work. |
+| `report/` | `final_report.ipynb`: all five steps merged into one document, with unified section and figure numbering. |
+| `html_preview/` | Exported HTML versions of all notebooks and the merged document, for reading without Jupyter. |
+| `src/` | `data_loader.py`: downloading and loading the raw data. Everything else is done in the notebooks, because each step is tied to its explanation. |
 
-## Pokretanje
+## Running
 
-Potreban je Python 3.10 ili noviji.
+Python 3.10 or newer is required.
 
 ```bash
 # 1. Kreiranje i aktiviranje virtuelnog okruženja
@@ -99,17 +99,17 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Notebook-ovi se zatim pokreću iz aktiviranog okruženja:
+The notebooks are then started from the activated environment:
 
 ```bash
 jupyter notebook
 ```
 
-Notebook-i se pokreću **redom, od `00` do `04`**, jer svaki čita ono što je prethodni zapisao u `data/processed/`. Fajlovi iz tog foldera su već u repozitorijumu, pa se svaki notebook može pokrenuti i sam, bez prethodnih.
+The notebooks are run **in order, from `00` to `04`**, because each one reads what the previous one wrote to `data/processed/`. The files in that folder are already in the repository, so each notebook can also be run on its own, without the previous ones.
 
-## Podaci
+## Data
 
-Sirovi podaci se ne čuvaju u repozitorijumu. Preuzimaju se sa Kaggle-a pri prvom pokretanju i smeštaju u `data/raw/`:
+Raw data is not stored in the repository. It is downloaded from Kaggle on the first run and placed in `data/raw/`:
 
 ```python
 from src.data_loader import load_raw
@@ -117,12 +117,12 @@ from src.data_loader import load_raw
 responses, schema = load_raw()
 ```
 
-Preuzimanje se izvršava samo jednom — svako naredno pokretanje čita lokalnu kopiju iz `data/raw/`.
+The download happens only once; every later run reads the local copy from `data/raw/`.
 
-## Šta ostaje otvoreno
+## Open issues
 
-Nalazi i ograničenja izneseni su u zaključcima pojedinačnih koraka; ovo su ona koja se tiču rada u celini:
+Findings and limitations are presented in the conclusions of each step; these are the ones that concern the work as a whole:
 
-- **Uzorak nije slučajan uzorak programera** nego onih koji su popunili anketu i prijavili platu, a prijavljivanje plate zavisi od posmatranih obeležja. Model opisuje tu populaciju.
-- **63 od 423 koeficijenta procenjena su na manje od pedeset ispitanika**, a dva najjača na po dva čoveka, pa se jačina koeficijenta ne sme čitati bez broja ispitanika iza njega.
-- **Interakcije nisu probane**, a nelinearni modeli (stabla i ansambli) su izvan obima predmeta, pa su ostavljeni kao prvi sledeći korak.
+- **The sample is not a random sample of developers** but of those who filled in the survey and reported a salary, and reporting a salary depends on observed attributes. The model describes that population.
+- **63 of the 423 coefficients are estimated from fewer than fifty respondents**, and the two strongest from two people each, so a coefficient's size should not be read without the number of respondents behind it.
+- **Interactions were not tried**, and nonlinear models (trees and ensembles) are outside the scope of the course, so they are left as the first next step.
