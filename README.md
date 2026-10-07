@@ -109,6 +109,8 @@ The notebooks are run **in order, from `00` to `04`**, because each one reads wh
 
 ## Data
 
+Survey data © Stack Overflow, from the [Stack Overflow Developer Survey 2025](https://survey.stackoverflow.co/), licensed under the [Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/1-0/). The processed files in `data/processed/` are derived from it and are shared under the same license.
+
 Raw data is not stored in the repository. It is downloaded from Kaggle on the first run and placed in `data/raw/`:
 
 ```python

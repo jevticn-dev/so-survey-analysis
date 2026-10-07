@@ -109,6 +109,8 @@ Notebook-i se pokreću **redom, od `00` do `04`**, jer svaki čita ono što je p
 
 ## Podaci
 
+Podaci ankete © Stack Overflow, iz [Stack Overflow Developer Survey 2025](https://survey.stackoverflow.co/), pod licencom [Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/1-0/). Obrađeni fajlovi u `data/processed/` izvedeni su iz njih i dele se pod istom licencom.
+
 Sirovi podaci se ne čuvaju u repozitorijumu. Preuzimaju se sa Kaggle-a pri prvom pokretanju i smeštaju u `data/raw/`:
 
 ```python
